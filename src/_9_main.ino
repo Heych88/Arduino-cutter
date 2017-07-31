@@ -22,6 +22,8 @@ void loop() {
       motor_stop(false);
       printToScreen("stopped", 0, 0, true, false);
     }
+
+    setMenu();
     //printToScreen(speed_str, 0, 0, true, true);
     //if (!e_stop_active) delay(2000);
     //printToScreen(speed_str, 0, 1, false, false);

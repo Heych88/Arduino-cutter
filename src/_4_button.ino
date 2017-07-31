@@ -33,10 +33,19 @@ void pollButton() {
       }
       
     } else if (pb_value < 128){
+      // Up button pressed
+      state++;
+      if(state > 3) state = LENGTH;
     } else if (pb_value < 300){
+      // Down button Press
+      state--;
+      if(state < 0) state = 0;
     } else if (pb_value < 500){
+      // Left button press
     } else if (pb_value < 700){
+      // Select button pressed
     } 
+
   }
 }
 

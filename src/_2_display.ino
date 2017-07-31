@@ -1,5 +1,5 @@
 
-void printToScreen(const char* str, const short col, const short row, const bool clear_row=true, const bool clear_screen=false) {
+void printToScreen(const String str, const short col, const short row, const bool clear_row=true, const bool clear_screen=false) {
   // prints a string to the display in the defined cursor position
   // @param: str, string to print to screen
   // @param: col, display col position
@@ -17,3 +17,36 @@ void printToScreen(const char* str, const short col, const short row, const bool
   lcd.setCursor(col, row);
   lcd.print(str);
 }
+
+void homeMenu() {
+
+  String qty_str = String("Qty: ") + 20 + String('/') + 55 ;
+  printToScreen(qty_str, 0, 0, true, false);
+  String len_str = String("Length: ") + 20 + String("mm") ;
+  printToScreen(len_str, 0, 1, true, false);
+}
+
+void speedMenu() {
+
+  String qty_str = String("Set Speed:");
+  printToScreen("Set Speed:", 0, 0, true, false);
+  printToScreen(String(pwm_desired), 0, 1, true, false);
+
+  lcd.cursor();
+}
+
+void setMenu() {
+  switch(state) {
+    case MAIN:
+      homeMenu();
+      break;
+    case SPEED:
+      speedMenu();
+      break;
+    case QTY:
+      break;
+    case LENGTH:
+      break;      
+  }
+}
+

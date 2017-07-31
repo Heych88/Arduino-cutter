@@ -6,7 +6,7 @@
 #define DISPLAY_COLS 16
 
 char* speed_str = "Speed: %d%% ";
-char* qty_str_home = "Qty: %d/%d";
+char* qty_str = "Qty: %d/%d";
 char* total_str = "Total: %d ";
 char* length_str = "Length: %dmm ";
 char blank_line[DISPLAY_COLS];
@@ -53,6 +53,17 @@ bool start_active = false;
 
 // add a pushbutton delay
 unsigned long pb_time = 0;
+
+// define the menu states classes
+#define MAIN 0  // main menu state
+#define SPEED 1 // speed menu state
+#define QTY 2 // quantity menu state
+#define LENGTH 3 // length of cut menu state
+
+//String[] = {"Speed", "Quantity", "Length"};
+
+short state = MAIN; // the current system state
+unsigned short menu;
 
 void setup() {
   // set up the LCD's number of columns and rows:
