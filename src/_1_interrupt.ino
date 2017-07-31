@@ -9,3 +9,19 @@ void intEncodeA() {
     motor_speed = wheel_dist_ppr * 50 * 1000 / diff;
   }
 }
+
+void intEStop() {
+
+  if (digitalRead(E_STOP_BUT) == HIGH) {
+    // Is a rising edge so E-Stop has been cleared
+    e_stop_active = false;
+  } else {
+    e_stop_active = true;
+
+    // turn off all motors and valves
+    //motor_stop(true); // stop motor A
+    //motor_stop(false); // stop motor B
+    
+  }
+}
+

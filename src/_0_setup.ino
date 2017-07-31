@@ -39,6 +39,15 @@ const float wheel_diam = 61.0;  // diameter of the wheel
 const int ecode_ppr = 663; // number of encoder counts per revolution
 const float wheel_dist_ppr = wheel_diam * PI / ecode_ppr;
 
+// Push buttons and E-Stop
+#define E_STOP_BUT 1
+#define SELECT_BUT A0
+#define UP_BUT A0
+#define DOWN_BUT A0
+
+char* estop_str = "E-STOP";
+volatile bool e_stop_active = false;
+
 void setup() {
   // set up the LCD's number of columns and rows:
   lcd.begin(DISPLAY_COLS, DISPLAY_ROWS);
@@ -52,9 +61,17 @@ void setup() {
   pinMode(PWM_B, OUTPUT);
   pinMode(DIR_B, OUTPUT);
   pinMode(BRAKE_B, OUTPUT);
+
+  // set pin 0 as an intterupt for the E-stop 
+  delay(500);
+  pinMode(E_STOP_BUT, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(E_STOP_BUT), intEStop, CHANGE);
   
   // set pin 2 as an intterupt on the rising edge that calls he function intEncodeA() on the interrupt 
   pinMode(INT_ENCODE_A, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(INT_ENCODE_A), intEncodeA, RISING);
+
+  // check if E-stop is active
+  if (digitalRead(E_STOP_BUT) == LOW) e_stop_active = true;
 }
 

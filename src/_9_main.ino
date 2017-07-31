@@ -1,13 +1,22 @@
 // main program loop 
 void loop() {
-  // put your main code here, to run repeatedly:
-  motor_run(false, FORWARD);
-  printToScreen(speed_str, 0, 0, true, true);
-  delay(2000);
-  printToScreen(speed_str, 0, 1, false, false);
-  delay(2000);
-  printToScreen("ghgfhj", 0, 0, true, false);
-  motor_stop(false);
-  delay(2000);
+  
+  if (e_stop_active) {
+    // E-Stop is active so stop the machine
+    eStop();
+    
+    delay(1000);
+    
+  } else {
+    // Normal running program
+    motor_run(false, FORWARD);
+    printToScreen(speed_str, 0, 0, true, true);
+    if (!e_stop_active) delay(2000);
+    printToScreen(speed_str, 0, 1, false, false);
+    if (!e_stop_active) delay(2000);
+    printToScreen("ghgfhj", 0, 0, true, false);
+    motor_stop(false);
+    if (!e_stop_active) delay(2000);
+  }
 }
 
