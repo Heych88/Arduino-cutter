@@ -6,12 +6,39 @@ void eStop() {
     motor_stop(false); // stop motor B
 
     // dispaly E-Stop active
-    printToScreen("stop", 0, 0, true, true);
-
+    printToScreen(estop_str, 0, 0, true, true);
 
 }
 
-//char pollButton() {
-//  int value analogRead(
-//}
+void pollButton() {
+
+  // check if E-stop is active
+  if (digitalRead(E_STOP_BUT) == LOW) e_stop_active = true;
+
+  int pb_value = analogRead(SELECT_BUT); 
+
+  if ((millis() - pb_time) >= 200) {
+    pb_time = millis();
+    if(pb_value < 10){
+      // Start stop button pressed
+      if(start_active) {
+        start_active = false;
+      } else {
+        start_active = true;
+      }
+
+      while(analogRead(SELECT_BUT) < 10){
+        // do nothing until the push button is released
+        delay(20);
+      }
+      
+    } else if (pb_value < 128){
+    } else if (pb_value < 300){
+    } else if (pb_value < 500){
+    } else if (pb_value < 700){
+    } 
+  }
+}
+
+
 

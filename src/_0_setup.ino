@@ -41,12 +41,18 @@ const float wheel_dist_ppr = wheel_diam * PI / ecode_ppr;
 
 // Push buttons and E-Stop
 #define E_STOP_BUT 1
+char* estop_str = "E-STOP";
+volatile bool e_stop_active = false;
+
 #define SELECT_BUT A0
 #define UP_BUT A0
 #define DOWN_BUT A0
 
-char* estop_str = "E-STOP";
-volatile bool e_stop_active = false;
+#define START_BUT A0
+bool start_active = false;
+
+// add a pushbutton delay
+unsigned long pb_time = 0;
 
 void setup() {
   // set up the LCD's number of columns and rows:
