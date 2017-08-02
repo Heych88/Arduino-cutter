@@ -26,13 +26,28 @@ void homeMenu() {
   printToScreen(len_str, 0, 1, true, false);
 }
 
-void speedMenu() {
+void speedMenu(const char button) {
 
+  switch(button) {
+    case UP:
+      pwm_desired++;
+      if(pwm_desired > 100) pwm_desired = 100;
+      break;
+    case DOWN:
+      pwm_desired--;
+      if(pwm_desired < 0) pwm_desired = 0;
+      break;
+    case SELECT:
+      menu_selected = false;
+      state = 0;
+      break;
+  }
+  
   String qty_str = String("Set Speed:");
   printToScreen("Set Speed:", 0, 0, true, false);
   printToScreen(String(pwm_desired), 0, 1, true, false);
 
-  lcd.cursor();
+  //lcd.cursor();
 }
 
 void setMenu() {
@@ -41,7 +56,7 @@ void setMenu() {
       homeMenu();
       break;
     case SPEED:
-      speedMenu();
+      speedMenu(NO_PRESS);
       break;
     case QTY:
       break;

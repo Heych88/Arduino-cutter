@@ -32,7 +32,7 @@ LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 volatile int encoderCount = 0; // number of encoder revolutions
 volatile unsigned long time_stamp = millis(); // time between speed calculations
 volatile float motor_speed = 0; // the current speed of the motor
-unsigned int pwm_desired = 60; // desired pwm rate of the motor
+int pwm_desired = 60; // desired pwm rate of the motor
 
 // drive wheel parameters
 const float wheel_diam = 61.0;  // diameter of the wheel
@@ -51,6 +51,15 @@ volatile bool e_stop_active = false;
 #define START_BUT A0
 bool start_active = false;
 
+// pushbutton char's for which button is pressed
+#define SELECT 'S' // select / return button
+#define RUN 'A' // stop start button (A)ctive
+#define LEFT 'L' // left pushbutton
+#define RIGHT 'R' // right pushbutton
+#define UP 'U' // up pushbutton
+#define DOWN 'D' // down pushbutton
+#define NO_PRESS 'N' // clears a button press
+
 // add a pushbutton delay
 unsigned long pb_time = 0;
 
@@ -64,6 +73,7 @@ unsigned long pb_time = 0;
 
 short state = MAIN; // the current system state
 unsigned short menu;
+bool menu_selected = false;  // keeps track if the user has enter a menu previously true => menu has been enter previously
 
 void setup() {
   // set up the LCD's number of columns and rows:

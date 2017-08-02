@@ -10,14 +10,55 @@ void eStop() {
 
 }
 
-void pollButton() {
+void updateButton(const char button) {
+
+  if (menu_selected) {
+    // a previous menu was selected
+    switch(state) {
+      case MAIN:
+        homeMenu();
+        break;
+      case SPEED:
+        speedMenu(button);
+        break;
+      case QTY:
+        break;
+      case LENGTH:
+        break;      
+    }
+    
+  } else {
+    // no menu selected so scroll or select a menu
+    switch(button) {
+      case UP:
+        state++;
+        if(state > LENGTH) state = LENGTH;
+        break;
+      case DOWN:
+        state--;
+        if(state < 0) state = 0;
+        break;
+      case SELECT:
+        menu_selected = true;
+        break;
+      case RUN:
+        break;
+    }
+    // update the display with the new menu
+    if(button != NO_PRESS) setMenu();
+  }
+}
+
+char pollButton() {
+
+  char button = NO_PRESS;
 
   // check if E-stop is active
   if (digitalRead(E_STOP_BUT) == LOW) e_stop_active = true;
 
   int pb_value = analogRead(SELECT_BUT); 
 
-  if ((millis() - pb_time) >= 200) {
+  if ((millis() - pb_time) >= 100) {
     pb_time = millis();
     if(pb_value < 10){
       // Start stop button pressed
@@ -31,22 +72,31 @@ void pollButton() {
         // do nothing until the push button is released
         delay(20);
       }
+
+      button = RUN;
       
     } else if (pb_value < 128){
       // Up button pressed
-      state++;
-      if(state > 3) state = LENGTH;
+      button = UP;
     } else if (pb_value < 300){
       // Down button Press
-      state--;
-      if(state < 0) state = 0;
+      button = DOWN;
     } else if (pb_value < 500){
       // Left button press
+      button = LEFT;
     } else if (pb_value < 700){
       // Select button pressed
-    } 
-
+      button = SELECT;
+    } else {
+       button = NO_PRESS;
+    }
+  } else {
+     button = NO_PRESS;
   }
+
+  if (button != NO_PRESS) updateButton(button);
+
+  return button;
 }
 
 
