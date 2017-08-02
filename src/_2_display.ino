@@ -22,12 +22,13 @@ void homeMenu() {
 
   String qty_str = "Qty: " + String(qty_current) + "/" + String(qty_desired);
   printToScreen(qty_str, 0, 0, true, false);
-  String len_str = String("Length: ") + 20 + String("mm");
+  String len_str = String("Length: ") + String(cut_length) + String("mm");
   printToScreen(len_str, 0, 1, true, false);
 }
 
 void speedMenu(const char button) {
-
+  // menu for setting the motor speed
+  // @param: button, button that has been pressed.
   switch(button) {
     case UP:
       // up button pressed, increment the desired quantity
@@ -77,6 +78,33 @@ void qtyMenu(const char button) {
   printToScreen(String(qty_desired), 0, 1, true, false);
 }
 
+void lengthMenu (const char button) {
+  // Length menu for setting the length of each piece to cut
+  // @param: button, button that has been pressed.
+  switch(button) {
+    case UP:
+      // up button pressed, increment the piece length
+      cut_length += 2; 
+      if(cut_length > 1000) cut_length = 1000;
+      break;
+    case DOWN:
+      // deincrement the piece length
+      qty_desired -= 2;
+      if(cut_length < 0) cut_length = 0;
+      break;
+    case SELECT:
+      // return to home menu
+      menu_selected = false;
+      state = 0;
+      break;
+  }
+  
+  String qty_str = "Set length:";
+  printToScreen(qty_str, 0, 0, true, false);
+  String value_str = String(cut_length) + "mm";
+  printToScreen(value_str, 0, 1, true, false);
+}
+
 void setMenu() {
   switch(state) {
     case MAIN:
@@ -89,6 +117,7 @@ void setMenu() {
       qtyMenu(NO_PRESS);
       break;
     case LENGTH:
+    lengthMenu(NO_PRESS);
       break;      
   }
 }

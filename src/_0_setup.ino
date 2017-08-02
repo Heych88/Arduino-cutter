@@ -35,7 +35,7 @@ volatile float motor_speed = 0; // the current speed of the motor
 int pwm_desired = 60; // desired pwm rate of the motor
 int qty_desired = 0; // total number of sleeves required for production
 int qty_current = 0; // number of sleeves already produced
-
+int cut_length = 0; // length of each piece
 
 // drive wheel parameters
 const float wheel_diam = 61.0;  // diameter of the wheel

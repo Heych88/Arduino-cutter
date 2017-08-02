@@ -27,6 +27,8 @@ void updateButton(const char button) {
         qtyMenu(button);
         break;
       case LENGTH:
+        // update the length of each piece
+        lengthMenu(button);
         break;      
     }
     
