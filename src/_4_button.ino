@@ -19,9 +19,12 @@ void updateButton(const char button) {
         homeMenu();
         break;
       case SPEED:
+        // update the system speed
         speedMenu(button);
         break;
       case QTY:
+        // update the total number of pieces required
+        qtyMenu(button);
         break;
       case LENGTH:
         break;      

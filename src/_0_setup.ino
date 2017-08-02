@@ -33,6 +33,9 @@ volatile int encoderCount = 0; // number of encoder revolutions
 volatile unsigned long time_stamp = millis(); // time between speed calculations
 volatile float motor_speed = 0; // the current speed of the motor
 int pwm_desired = 60; // desired pwm rate of the motor
+int qty_desired = 0; // total number of sleeves required for production
+int qty_current = 0; // number of sleeves already produced
+
 
 // drive wheel parameters
 const float wheel_diam = 61.0;  // diameter of the wheel
