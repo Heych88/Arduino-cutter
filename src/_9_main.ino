@@ -16,11 +16,9 @@ void loop() {
     if (start_active) {
       // start running the system using motor B
       motor_run(false, FORWARD);
-      //printToScreen("active", 0, 0, true, false);
     } else {
       // stop motor B
       motor_stop(false);
-      //printToScreen("stopped", 0, 0, true, false);
     }
 
     if ((!menu_selected) && (state == MAIN)) homeMenu();

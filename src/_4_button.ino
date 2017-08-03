@@ -63,7 +63,7 @@ char pollButton() {
 
   int pb_value = analogRead(SELECT_BUT); 
 
-  if ((millis() - pb_time) >= 100) {
+  if ((millis() - pb_time) >= 50) {
     pb_time = millis();
     if(pb_value < 10){
       // Start stop button pressed

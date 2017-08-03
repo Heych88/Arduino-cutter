@@ -24,6 +24,7 @@ void homeMenu() {
   printToScreen(qty_str, 0, 0, true, false);
   String len_str = String("Length: ") + String(cut_length) + String("mm");
   printToScreen(len_str, 0, 1, true, false);
+  lcd.noBlink();
 }
 
 void speedMenu(const char button) {
@@ -50,6 +51,9 @@ void speedMenu(const char button) {
   String qty_str = String("Set Speed:");
   printToScreen(qty_str, 0, 0, true, false);
   printToScreen(String(pwm_desired), 0, 1, true, false);
+
+  // blink the cursor to indicate the menu has been selected
+  if (menu_selected) lcd.blink();
 }
 
 void qtyMenu(const char button) {
@@ -76,6 +80,9 @@ void qtyMenu(const char button) {
   String qty_str = String("Set quantity:");
   printToScreen(qty_str, 0, 0, true, false);
   printToScreen(String(qty_desired), 0, 1, true, false);
+
+  // blink the cursor to indicate the menu has been selected
+  if (menu_selected) lcd.blink();
 }
 
 void lengthMenu (const char button) {
@@ -103,6 +110,9 @@ void lengthMenu (const char button) {
   printToScreen(qty_str, 0, 0, true, false);
   String value_str = String(cut_length) + "mm";
   printToScreen(value_str, 0, 1, true, false);
+
+  // blink the cursor to indicate the menu has been selected
+  if (menu_selected) lcd.blink();
 }
 
 void setMenu() {
