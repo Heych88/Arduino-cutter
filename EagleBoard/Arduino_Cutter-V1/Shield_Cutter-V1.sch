@@ -3219,15 +3219,6 @@ chip</description>
 <rectangle x1="0.2588" y1="-0.3048" x2="0.5588" y2="0.2951" layer="51"/>
 <rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
 </package>
-<package name="DISCLAIMER">
-<text x="0" y="18.161" size="1.27" layer="1" ratio="10">Reference Designs ARE PROVIDED "AS IS" AND "WITH ALL FAULTS. Arduino DISCLAIMS ALL OTHER WARRANTIES, EXPRESS OR IMPLIED,</text>
-<text x="0" y="16.129" size="1.27" layer="1" ratio="10">REGARDING PRODUCTS, INCLUDING BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE</text>
-<text x="0" y="13.081" size="1.27" layer="1" ratio="10">Arduino may make changes to specifications and product descriptions at any time, without notice. The Customer must not</text>
-<text x="0" y="11.049" size="1.27" layer="1" ratio="10">rely on the absence or characteristics of any features or instructions marked "reserved" or "undefined." Arduino reserves</text>
-<text x="0" y="9.017" size="1.27" layer="1" ratio="10">these for future definition and shall have no responsibility whatsoever for conflicts or incompatibilities arising from future changes to them.</text>
-<text x="0" y="5.969" size="1.27" layer="1" ratio="10">The product information on the Web Site or Materials is subject to change without notice. Do not finalize a design with this information. </text>
-<text x="0" y="2.921" size="1.6764" layer="1">ARDUINO is a registered trademark.</text>
-</package>
 </packages>
 <symbols>
 <symbol name="FIDUCIAL">
@@ -3318,15 +3309,6 @@ chip</description>
 <pin name="PAD1" x="-2.54" y="-20.32" length="middle" direction="pas" rot="R90"/>
 <pin name="PAD2" x="0" y="-20.32" length="middle" direction="pas" rot="R90"/>
 <pin name="PAD3" x="2.54" y="-20.32" length="middle" direction="pas" rot="R90"/>
-</symbol>
-<symbol name="DISCLAIMER">
-<text x="0" y="33.02" size="3.048" layer="91">Reference Designs ARE PROVIDED "AS IS" AND "WITH ALL FAULTS. Arduino DISCLAIMS ALL OTHER WARRANTIES, EXPRESS OR IMPLIED,</text>
-<text x="0" y="22.86" size="3.048" layer="91">Arduino may make changes to specifications and product descriptions at any time, without notice. The Customer must not</text>
-<text x="0" y="27.94" size="3.048" layer="91">REGARDING PRODUCTS, INCLUDING BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE</text>
-<text x="0" y="17.78" size="3.048" layer="91">rely on the absence or characteristics of any features or instructions marked "reserved" or "undefined." Arduino reserves</text>
-<text x="0" y="12.7" size="3.048" layer="91">these for future definition and shall have no responsibility whatsoever for conflicts or incompatibilities arising from future changes to them.</text>
-<text x="0" y="7.62" size="3.048" layer="91">The product information on the Web Site or Materials is subject to change without notice. Do not finalize a design with this information. </text>
-<text x="0" y="0" size="3.81" layer="91">ARDUINO is a registered trademark.</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -4757,18 +4739,6 @@ chip</description>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="DISCLAIMER">
-<gates>
-<gate name="G$1" symbol="DISCLAIMER" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="DISCLAIMER">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -16702,7 +16672,6 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <part name="R2" library="SmartPrj" deviceset="R-EU_" device="R1206" value="0R15"/>
 <part name="GND27" library="supply1" deviceset="GND" device=""/>
 <part name="GND28" library="supply1" deviceset="GND" device=""/>
-<part name="U$1" library="SmartPrj" deviceset="DISCLAIMER" device=""/>
 <part name="SUPPLY3" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="supply1" deviceset="GND" device=""/>
@@ -16728,8 +16697,8 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="P+16" library="supply1" deviceset="+5V" device=""/>
 <part name="R18" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
-<part name="D11" library="zetex" library_urn="urn:adsk.eagle:library:418" deviceset="D_2C" device="SOT23"/>
-<part name="D12" library="zetex" library_urn="urn:adsk.eagle:library:418" deviceset="D_2C" device="SOT23"/>
+<part name="D11" library="zetex" library_urn="urn:adsk.eagle:library:418" deviceset="D_2C" device="SOT23" value="40v"/>
+<part name="D12" library="zetex" library_urn="urn:adsk.eagle:library:418" deviceset="D_2C" device="SOT23" value="40v"/>
 <part name="P+17" library="supply1" deviceset="+5V" device=""/>
 <part name="R19" library="resistor" deviceset="R-US_" device="M0805" value="10kΩ"/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
@@ -16745,7 +16714,7 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <part name="P+20" library="supply1" deviceset="+5V" device=""/>
 <part name="R21" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
 <part name="R22" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
-<part name="R24" library="pot" library_urn="urn:adsk.eagle:library:331" deviceset="TRIM_EU-" device="S64W"/>
+<part name="R24" library="pot" library_urn="urn:adsk.eagle:library:331" deviceset="TRIM_EU-" device="S64W" value="10k"/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="C1" library="SmartPrj" deviceset="C-EU" device="C1210" value="10u 35V"/>
@@ -16886,10 +16855,9 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <instance part="R2" gate="G$1" x="167.64" y="73.66" rot="R90"/>
 <instance part="GND27" gate="1" x="132.08" y="81.28" rot="R180"/>
 <instance part="GND28" gate="1" x="167.64" y="81.28" rot="R180"/>
-<instance part="U$1" gate="G$1" x="-38.1" y="-104.14"/>
 <instance part="SUPPLY3" gate="1" x="-10.16" y="111.76"/>
 <instance part="SUPPLY1" gate="1" x="-25.4" y="111.76"/>
-<instance part="SUPPLY4" gate="1" x="2.54" y="111.76"/>
+<instance part="SUPPLY4" gate="1" x="5.08" y="111.76"/>
 <instance part="P+4" gate="1" x="17.78" y="132.08" smashed="yes">
 <attribute name="VALUE" x="19.685" y="134.62" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -17009,9 +16977,9 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <attribute name="VALUE" x="159.385" y="5.08" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="GND20" gate="1" x="157.48" y="-17.78"/>
-<instance part="C1" gate="G$1" x="2.54" y="121.92" smashed="yes">
-<attribute name="NAME" x="4.064" y="122.301" size="1.778" layer="95"/>
-<attribute name="VALUE" x="4.064" y="117.221" size="1.778" layer="96"/>
+<instance part="C1" gate="G$1" x="5.08" y="121.92" smashed="yes">
+<attribute name="NAME" x="6.604" y="122.301" size="1.778" layer="95"/>
+<attribute name="VALUE" x="6.604" y="117.221" size="1.778" layer="96"/>
 </instance>
 <instance part="C2" gate="G$1" x="17.78" y="121.92" smashed="yes">
 <attribute name="NAME" x="20.066" y="122.555" size="1.778" layer="95"/>
@@ -17167,16 +17135,16 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <pinref part="P+1" gate="1" pin="+5V"/>
 </segment>
 <segment>
-<wire x1="2.54" y1="129.54" x2="17.78" y2="129.54" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="124.46" x2="2.54" y2="129.54" width="0.1524" layer="91"/>
-<junction x="2.54" y="129.54"/>
+<wire x1="2.54" y1="129.54" x2="5.08" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="P+4" gate="1" pin="+5V"/>
+<wire x1="5.08" y1="129.54" x2="17.78" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="124.46" x2="17.78" y2="129.54" width="0.1524" layer="91"/>
 <junction x="17.78" y="129.54"/>
-<pinref part="C1" gate="G$1" pin="1"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 <pinref part="IC2" gate="G$1" pin="VOUT"/>
-<junction x="2.54" y="129.54"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<wire x1="5.08" y1="124.46" x2="5.08" y2="129.54" width="0.1524" layer="91"/>
+<junction x="5.08" y="129.54"/>
 </segment>
 <segment>
 <wire x1="60.96" y1="83.82" x2="60.96" y2="81.28" width="0.1524" layer="91"/>
@@ -17401,7 +17369,7 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <pinref part="GND28" gate="1" pin="GND"/>
 </segment>
 <segment>
-<wire x1="2.54" y1="116.84" x2="2.54" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="116.84" x2="5.08" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="SUPPLY4" gate="1" pin="GND"/>
 <pinref part="C1" gate="G$1" pin="2"/>
 </segment>
@@ -17526,10 +17494,6 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <pinref part="LED5" gate="G$1" pin="C"/>
 </segment>
 <segment>
-<wire x1="-10.16" y1="116.84" x2="-10.16" y2="114.3" width="0.1524" layer="91"/>
-<pinref part="SUPPLY3" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="C4" gate="G$1" pin="2"/>
 <pinref part="SUPPLY1" gate="1" pin="GND"/>
 <wire x1="-25.4" y1="116.84" x2="-25.4" y2="114.3" width="0.1524" layer="91"/>
@@ -17569,6 +17533,11 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <wire x1="5.08" y1="139.7" x2="7.62" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="R30" gate="G$1" pin="1"/>
 <pinref part="GND35" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="IC2" gate="G$1" pin="GND"/>
+<pinref part="SUPPLY3" gate="1" pin="GND"/>
+<wire x1="-10.16" y1="116.84" x2="-10.16" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VIN" class="2">
@@ -17894,19 +17863,16 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <segment>
 <pinref part="R20" gate="G$1" pin="2"/>
 <wire x1="332.74" y1="157.48" x2="325.12" y2="157.48" width="0.1524" layer="91"/>
-<junction x="332.74" y="157.48"/>
-<wire x1="332.74" y1="157.48" x2="345.44" y2="157.48" width="0.1524" layer="91"/>
 <label x="335.28" y="157.48" size="1.778" layer="95"/>
 <pinref part="SV3" gate="-1" pin="S"/>
+<pinref part="SV9" gate="-1" pin="S"/>
+<wire x1="332.74" y1="157.48" x2="355.6" y2="157.48" width="0.1524" layer="91"/>
+<junction x="332.74" y="157.48"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="D1"/>
 <wire x1="259.08" y1="63.5" x2="259.08" y2="73.66" width="0.1524" layer="91"/>
 <label x="259.08" y="63.5" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<wire x1="345.44" y1="157.48" x2="355.6" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="SV9" gate="-1" pin="S"/>
 </segment>
 </net>
 <net name="STEPER3" class="0">
@@ -18272,6 +18238,22 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="208,1,193.04,45.72,+5V,sup,,,,"/>
+<approved hash="208,1,17.78,129.54,+5V,sup,,,,"/>
+<approved hash="208,1,2.54,129.54,+5V,out,,,,"/>
+<approved hash="208,1,299.72,157.48,+5V,sup,,,,"/>
+<approved hash="208,1,345.44,106.68,+5V,sup,,,,"/>
+<approved hash="208,1,332.74,170.18,+5V,sup,,,,"/>
+<approved hash="208,1,345.44,160.02,+5V,sup,,,,"/>
+<approved hash="208,1,152.4,2.54,+5V,sup,,,,"/>
+<approved hash="208,1,144.78,-33.02,+5V,sup,,,,"/>
+<approved hash="208,1,99.06,48.26,+5V,sup,,,,"/>
+<approved hash="208,1,198.12,66.04,+5V,sup,,,,"/>
+<approved hash="208,1,157.48,0,+5V,sup,,,,"/>
+<approved hash="208,1,279.4,99.06,+5V,sup,,,,"/>
+<approved hash="208,1,180.34,170.18,+5V,sup,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
