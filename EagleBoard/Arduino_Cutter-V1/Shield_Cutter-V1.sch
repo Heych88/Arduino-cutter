@@ -8,34 +8,34 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
-<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
-<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
-<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
-<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
-<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
-<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
-<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
-<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
-<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
-<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
-<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
-<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="yes" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="yes" active="no"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="yes" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="yes" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="yes" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="yes" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="yes" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="yes" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="yes" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="yes" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="yes" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="yes" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="yes" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="yes" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -44,8 +44,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -53,20 +53,20 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="50" name="dxf" color="12" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="no"/>
-<layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
-<layer number="58" name="tCAD" color="7" fill="1" visible="no" active="no"/>
-<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
-<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
+<layer number="50" name="dxf" color="12" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="1" visible="yes" active="no"/>
+<layer number="54" name="bGND_GNDA" color="7" fill="1" visible="yes" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
+<layer number="58" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="yes" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="yes" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -16639,7 +16639,7 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <part name="FID1" library="SmartPrj" deviceset="FIDUCIALMOUNT" device=""/>
 <part name="FID2" library="SmartPrj" deviceset="FIDUCIALMOUNT" device=""/>
 <part name="FID3" library="SmartPrj" deviceset="FIDUCIALMOUNT" device=""/>
-<part name="C7" library="SmartPrj" deviceset="C-EU" device="C0603K" value="100n"/>
+<part name="C7" library="SmartPrj" deviceset="C-EU" device="C0805" value="100n"/>
 <part name="GND25" library="supply1" deviceset="GND" device=""/>
 <part name="LED2" library="led" deviceset="LED" device="CHIPLED_0805" value="Green"/>
 <part name="LED4" library="led" deviceset="LED" device="CHIPLED_0805" value="Green"/>
@@ -16680,30 +16680,30 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
 <part name="P+11" library="supply1" deviceset="+5V" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
-<part name="R9" library="resistor" deviceset="R-US_" device="R0603" value="300Ω"/>
-<part name="R12" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
-<part name="R13" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
-<part name="R14" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
+<part name="R9" library="resistor" deviceset="R-US_" device="R0805" value="300Ω"/>
+<part name="R12" library="resistor" deviceset="R-US_" device="R0805" value="10kΩ"/>
+<part name="R13" library="resistor" deviceset="R-US_" device="R0805" value="10kΩ"/>
+<part name="R14" library="resistor" deviceset="R-US_" device="R0805" value="10kΩ"/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
-<part name="R15" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
+<part name="R15" library="resistor" deviceset="R-US_" device="R0805" value="10kΩ"/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
-<part name="R16" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
+<part name="R16" library="resistor" deviceset="R-US_" device="R0805" value="10kΩ"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="P+7" library="supply1" deviceset="+5V" device=""/>
-<part name="R17" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
+<part name="R17" library="resistor" deviceset="R-US_" device="R0805" value="10kΩ"/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="P+16" library="supply1" deviceset="+5V" device=""/>
-<part name="R18" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
-<part name="D11" library="zetex" library_urn="urn:adsk.eagle:library:418" deviceset="D_2C" device="SOT23" value="40v"/>
-<part name="D12" library="zetex" library_urn="urn:adsk.eagle:library:418" deviceset="D_2C" device="SOT23" value="40v"/>
+<part name="R18" library="resistor" deviceset="R-US_" device="R0805" value="10kΩ"/>
+<part name="D11" library="zetex" library_urn="urn:adsk.eagle:library:418" deviceset="D_2C" device="SOT323" value="40v"/>
+<part name="D12" library="zetex" library_urn="urn:adsk.eagle:library:418" deviceset="D_2C" device="SOT323" value="40v"/>
 <part name="P+17" library="supply1" deviceset="+5V" device=""/>
 <part name="R19" library="resistor" deviceset="R-US_" device="M0805" value="10kΩ"/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
 <part name="P+18" library="supply1" deviceset="+5V" device=""/>
-<part name="R20" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
+<part name="R20" library="resistor" deviceset="R-US_" device="R0805" value="10kΩ"/>
 <part name="GND23" library="supply1" deviceset="GND" device=""/>
 <part name="P+19" library="supply1" deviceset="+5V" device=""/>
 <part name="SUPPLY5" library="supply1" deviceset="GND" device=""/>
@@ -16712,68 +16712,68 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <part name="GND24" library="supply1" deviceset="GND" device=""/>
 <part name="P+10" library="supply1" deviceset="+5V" device=""/>
 <part name="P+20" library="supply1" deviceset="+5V" device=""/>
-<part name="R21" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
-<part name="R22" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
+<part name="R21" library="resistor" deviceset="R-US_" device="R0805" value="10kΩ"/>
+<part name="R22" library="resistor" deviceset="R-US_" device="R0805" value="10kΩ"/>
 <part name="R24" library="pot" library_urn="urn:adsk.eagle:library:331" deviceset="TRIM_EU-" device="S64W" value="10k"/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="C1" library="SmartPrj" deviceset="C-EU" device="C1210" value="10u 35V"/>
-<part name="C2" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
-<part name="C5" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
-<part name="C6" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
+<part name="C2" library="rcl" deviceset="C-EU" device="C0805" value="100nF"/>
+<part name="C5" library="rcl" deviceset="C-EU" device="C0805" value="100nF"/>
+<part name="C6" library="rcl" deviceset="C-EU" device="C0805" value="100nF"/>
 <part name="GND26" library="supply1" deviceset="GND" device=""/>
-<part name="R23" library="resistor" deviceset="R-US_" device="R0603" value="10Ω"/>
-<part name="R25" library="resistor" deviceset="R-US_" device="R0603" value="10Ω"/>
-<part name="R26" library="resistor" deviceset="R-US_" device="R0603" value="10Ω"/>
-<part name="R27" library="resistor" deviceset="R-US_" device="R0603" value="10Ω"/>
+<part name="R23" library="resistor" deviceset="R-US_" device="R0805" value="10Ω"/>
+<part name="R25" library="resistor" deviceset="R-US_" device="R0805" value="10Ω"/>
+<part name="R26" library="resistor" deviceset="R-US_" device="R0805" value="10Ω"/>
+<part name="R27" library="resistor" deviceset="R-US_" device="R0805" value="10Ω"/>
 <part name="U1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="ARDUINOR3" device="-DIMENSION"/>
 <part name="GND30" library="supply1" deviceset="GND" device=""/>
 <part name="GND31" library="supply1" deviceset="GND" device=""/>
 <part name="GND29" library="supply1" deviceset="GND" device=""/>
 <part name="P+21" library="supply1" deviceset="+5V" device=""/>
-<part name="C11" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
-<part name="RESET" library="switch-omron" library_urn="urn:adsk.eagle:library:377" deviceset="10-XX" device=""/>
+<part name="C11" library="rcl" deviceset="C-EU" device="C0805" value="100nF"/>
+<part name="RESET" library="switch-omron" library_urn="urn:adsk.eagle:library:377" deviceset="10-XX" device="" value="1"/>
 <part name="K1" library="relay" library_urn="urn:adsk.eagle:library:339" deviceset="AQY*" device="SOP" technology="21"/>
 <part name="GND32" library="supply1" deviceset="GND" device=""/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
-<part name="R10" library="resistor" deviceset="R-US_" device="R0603" value="2.5kΩ"/>
+<part name="R10" library="resistor" deviceset="R-US_" device="R0805" value="2.5kΩ"/>
 <part name="LED5" library="led" deviceset="LED" device="CHIPLED_0805" value="Green"/>
 <part name="IC2" library="burr-brown" library_urn="urn:adsk.eagle:library:111" deviceset="REG1117" device=""/>
 <part name="C4" library="SmartPrj" deviceset="C-EU" device="C1210" value="10u 35V"/>
 <part name="D10" library="SmartPrj" deviceset="SS14" device=""/>
 <part name="SUPPLY2" library="supply1" deviceset="GND" device=""/>
-<part name="SV2" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S02P" device=""/>
-<part name="SV3" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S02P" device=""/>
-<part name="SV4" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S02P" device=""/>
-<part name="SV5" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S02P" device=""/>
-<part name="SV6" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S02P" device=""/>
-<part name="SV7" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S02P" device=""/>
+<part name="SV2" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S02P" device="" value="S2B-PH-K"/>
+<part name="SV3" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S02P" device="" value="S2B-PH-K"/>
+<part name="SV4" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S02P" device="" value="S2B-PH-K"/>
+<part name="SV5" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S02P" device="" value="S2B-PH-K"/>
+<part name="SV6" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S02P" device="" value="S2B-PH-K"/>
+<part name="SV7" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S02P" device="" value="S2B-PH-K"/>
 <part name="X2" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-23-2041" device=""/>
 <part name="GND34" library="supply1" deviceset="GND" device=""/>
-<part name="R3" library="resistor" deviceset="R-US_" device="R0603" value="10Ω"/>
+<part name="R3" library="resistor" deviceset="R-US_" device="R0805" value="10Ω"/>
 <part name="JP1" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="JP2E" device=""/>
 <part name="P+12" library="supply1" deviceset="+5V" device=""/>
 <part name="X3" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-23-2021" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
-<part name="R4" library="resistor" deviceset="R-US_" device="R0603" value="300Ω"/>
-<part name="R5" library="resistor" deviceset="R-US_" device="R0603" value="10kΩ"/>
+<part name="R4" library="resistor" deviceset="R-US_" device="R0805" value="300Ω"/>
+<part name="R5" library="resistor" deviceset="R-US_" device="R0805" value="10kΩ"/>
 <part name="K2" library="relay" library_urn="urn:adsk.eagle:library:339" deviceset="AQY*" device="SOP" technology="21"/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="GND33" library="supply1" deviceset="GND" device=""/>
-<part name="R6" library="resistor" deviceset="R-US_" device="R0603" value="2.5kΩ"/>
+<part name="R6" library="resistor" deviceset="R-US_" device="R0805" value="2.5kΩ"/>
 <part name="LED6" library="led" deviceset="LED" device="CHIPLED_0805" value="Green"/>
-<part name="R7" library="resistor" deviceset="R-US_" device="R0603" value="10Ω"/>
+<part name="R7" library="resistor" deviceset="R-US_" device="R0805" value="10Ω"/>
 <part name="X4" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-23-2021" device=""/>
-<part name="SV1" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S03P" device=""/>
-<part name="SV8" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S03P" device=""/>
-<part name="R8" library="resistor" deviceset="R-US_" device="R0603" value="1kΩ"/>
-<part name="R11" library="resistor" deviceset="R-US_" device="R0603" value="1kΩ"/>
-<part name="R28" library="resistor" deviceset="R-US_" device="R0603" value="1kΩ"/>
-<part name="R29" library="resistor" deviceset="R-US_" device="R0603" value="1kΩ"/>
+<part name="SV1" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S03P" device="" value="S3B-PH-K"/>
+<part name="SV8" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S03P" device="" value="S3B-PH-K"/>
+<part name="R8" library="resistor" deviceset="R-US_" device="R0805" value="1kΩ"/>
+<part name="R11" library="resistor" deviceset="R-US_" device="R0805" value="1kΩ"/>
+<part name="R28" library="resistor" deviceset="R-US_" device="R0805" value="1kΩ"/>
+<part name="R29" library="resistor" deviceset="R-US_" device="R0805" value="1kΩ"/>
 <part name="LED7" library="led" deviceset="LED" device="CHIPLED_0805" value="Green"/>
-<part name="R30" library="resistor" deviceset="R-US_" device="R0603" value="1kΩ"/>
+<part name="R30" library="resistor" deviceset="R-US_" device="R0805" value="1kΩ"/>
 <part name="GND35" library="supply1" deviceset="GND" device=""/>
-<part name="SV9" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S03P" device=""/>
+<part name="SV9" library="con-amp-mt" library_urn="urn:adsk.eagle:library:123" deviceset="S03P" device="" value="S3B-PH-K"/>
 <part name="U$2" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="2.1MMJACK" device="THM"/>
 </parts>
 <sheets>
@@ -16942,27 +16942,27 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <attribute name="VALUE" x="347.345" y="165.1" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="SUPPLY5" gate="1" x="17.78" y="111.76"/>
-<instance part="X1" gate="-1" x="127" y="-2.54"/>
-<instance part="X1" gate="-2" x="127" y="-5.08"/>
-<instance part="X1" gate="-3" x="127" y="-7.62"/>
-<instance part="X1" gate="-4" x="127" y="-10.16"/>
-<instance part="X1" gate="-5" x="127" y="-12.7"/>
-<instance part="X1" gate="-6" x="127" y="-15.24"/>
-<instance part="X1" gate="-7" x="127" y="-17.78"/>
-<instance part="X1" gate="-8" x="127" y="-20.32"/>
-<instance part="X1" gate="-9" x="127" y="-22.86"/>
-<instance part="X1" gate="-10" x="127" y="-25.4"/>
-<instance part="X1" gate="-11" x="127" y="-27.94"/>
-<instance part="X1" gate="-12" x="127" y="-30.48"/>
-<instance part="X1" gate="-13" x="127" y="-33.02"/>
-<instance part="X1" gate="-14" x="127" y="-35.56"/>
-<instance part="GND18" gate="1" x="139.7" y="2.54" rot="R180"/>
-<instance part="GND24" gate="1" x="139.7" y="-35.56"/>
-<instance part="P+10" gate="1" x="152.4" y="5.08" smashed="yes">
-<attribute name="VALUE" x="154.305" y="7.62" size="1.778" layer="96" rot="R180"/>
+<instance part="X1" gate="-1" x="38.1" y="45.72"/>
+<instance part="X1" gate="-2" x="38.1" y="43.18"/>
+<instance part="X1" gate="-3" x="38.1" y="40.64"/>
+<instance part="X1" gate="-4" x="38.1" y="38.1"/>
+<instance part="X1" gate="-5" x="38.1" y="35.56"/>
+<instance part="X1" gate="-6" x="38.1" y="33.02"/>
+<instance part="X1" gate="-7" x="38.1" y="30.48"/>
+<instance part="X1" gate="-8" x="38.1" y="27.94"/>
+<instance part="X1" gate="-9" x="38.1" y="25.4"/>
+<instance part="X1" gate="-10" x="38.1" y="22.86"/>
+<instance part="X1" gate="-11" x="38.1" y="20.32"/>
+<instance part="X1" gate="-12" x="38.1" y="17.78"/>
+<instance part="X1" gate="-13" x="38.1" y="15.24"/>
+<instance part="X1" gate="-14" x="38.1" y="12.7"/>
+<instance part="GND18" gate="1" x="50.8" y="50.8" rot="R180"/>
+<instance part="GND24" gate="1" x="50.8" y="12.7"/>
+<instance part="P+10" gate="1" x="63.5" y="53.34" smashed="yes">
+<attribute name="VALUE" x="65.405" y="55.88" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+20" gate="1" x="144.78" y="-35.56" smashed="yes" rot="R180">
-<attribute name="VALUE" x="142.875" y="-38.1" size="1.778" layer="96"/>
+<instance part="P+20" gate="1" x="55.88" y="12.7" smashed="yes" rot="R180">
+<attribute name="VALUE" x="53.975" y="10.16" size="1.778" layer="96"/>
 </instance>
 <instance part="R21" gate="G$1" x="109.22" y="48.26" smashed="yes" rot="R180">
 <attribute name="NAME" x="105.03" y="52.7614" size="1.778" layer="95" rot="R270"/>
@@ -16972,11 +16972,11 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <attribute name="NAME" x="193.6186" y="54.23" size="1.778" layer="95"/>
 <attribute name="VALUE" x="191.008" y="57.15" size="1.778" layer="96"/>
 </instance>
-<instance part="R24" gate="1" x="157.48" y="-7.62" rot="R180"/>
-<instance part="P+5" gate="1" x="157.48" y="2.54" smashed="yes">
-<attribute name="VALUE" x="159.385" y="5.08" size="1.778" layer="96" rot="R180"/>
+<instance part="R24" gate="1" x="68.58" y="40.64" rot="R180"/>
+<instance part="P+5" gate="1" x="68.58" y="50.8" smashed="yes">
+<attribute name="VALUE" x="70.485" y="53.34" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND20" gate="1" x="157.48" y="-17.78"/>
+<instance part="GND20" gate="1" x="68.58" y="30.48"/>
 <instance part="C1" gate="G$1" x="5.08" y="121.92" smashed="yes">
 <attribute name="NAME" x="6.604" y="122.301" size="1.778" layer="95"/>
 <attribute name="VALUE" x="6.604" y="117.221" size="1.778" layer="96"/>
@@ -16989,9 +16989,9 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <attribute name="NAME" x="281.686" y="147.955" size="1.778" layer="95"/>
 <attribute name="VALUE" x="281.686" y="145.669" size="1.778" layer="96"/>
 </instance>
-<instance part="C6" gate="G$1" x="144.78" y="-2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="144.145" y="-0.254" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="146.431" y="-0.254" size="1.778" layer="96" rot="R90"/>
+<instance part="C6" gate="G$1" x="55.88" y="45.72" smashed="yes" rot="R90">
+<attribute name="NAME" x="55.245" y="48.006" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="57.531" y="48.006" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="GND26" gate="1" x="279.4" y="137.16" rot="MR0"/>
 <instance part="R23" gate="G$1" x="320.04" y="124.46" smashed="yes">
@@ -17211,20 +17211,20 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <segment>
 <pinref part="X1" gate="-2" pin="KL"/>
 <pinref part="P+10" gate="1" pin="+5V"/>
-<wire x1="132.08" y1="-5.08" x2="152.4" y2="-5.08" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="-5.08" x2="152.4" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="43.18" x2="63.5" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="43.18" x2="63.5" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="C6" gate="G$1" pin="2"/>
-<wire x1="152.4" y1="-2.54" x2="152.4" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="-2.54" x2="152.4" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="152.4" y="-2.54"/>
-<label x="134.62" y="-5.08" size="1.778" layer="95"/>
+<wire x1="63.5" y1="45.72" x2="63.5" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="45.72" x2="63.5" y2="45.72" width="0.1524" layer="91"/>
+<junction x="63.5" y="45.72"/>
+<label x="45.72" y="43.18" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="X1" gate="-11" pin="KL"/>
 <pinref part="P+20" gate="1" pin="+5V"/>
-<wire x1="132.08" y1="-27.94" x2="144.78" y2="-27.94" width="0.1524" layer="91"/>
-<wire x1="144.78" y1="-27.94" x2="144.78" y2="-33.02" width="0.1524" layer="91"/>
-<label x="134.62" y="-27.94" size="1.778" layer="95"/>
+<wire x1="43.18" y1="20.32" x2="55.88" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="20.32" x2="55.88" y2="15.24" width="0.1524" layer="91"/>
+<label x="45.72" y="20.32" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="R21" gate="G$1" pin="2"/>
@@ -17239,7 +17239,7 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <segment>
 <pinref part="R24" gate="1" pin="A"/>
 <pinref part="P+5" gate="1" pin="+5V"/>
-<wire x1="157.48" y1="-2.54" x2="157.48" y2="0" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="45.72" x2="68.58" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="264.16" y1="99.06" x2="274.32" y2="99.06" width="0.1524" layer="91"/>
@@ -17428,28 +17428,28 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <segment>
 <pinref part="X1" gate="-1" pin="KL"/>
 <pinref part="GND18" gate="1" pin="GND"/>
-<wire x1="132.08" y1="-2.54" x2="139.7" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="-2.54" x2="139.7" y2="0" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="45.72" x2="50.8" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="45.72" x2="50.8" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="X1" gate="-5" pin="KL"/>
-<wire x1="132.08" y1="-12.7" x2="139.7" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="-12.7" x2="139.7" y2="-2.54" width="0.1524" layer="91"/>
-<junction x="139.7" y="-2.54"/>
+<wire x1="43.18" y1="35.56" x2="50.8" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="35.56" x2="50.8" y2="45.72" width="0.1524" layer="91"/>
+<junction x="50.8" y="45.72"/>
 <pinref part="C6" gate="G$1" pin="1"/>
-<wire x1="139.7" y1="-2.54" x2="142.24" y2="-2.54" width="0.1524" layer="91"/>
-<label x="134.62" y="-2.54" size="1.778" layer="95"/>
-<label x="134.62" y="-12.7" size="1.778" layer="95"/>
+<wire x1="50.8" y1="45.72" x2="53.34" y2="45.72" width="0.1524" layer="91"/>
+<label x="45.72" y="45.72" size="1.778" layer="95"/>
+<label x="45.72" y="35.56" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="X1" gate="-12" pin="KL"/>
 <pinref part="GND24" gate="1" pin="GND"/>
-<wire x1="132.08" y1="-30.48" x2="139.7" y2="-30.48" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="-30.48" x2="139.7" y2="-33.02" width="0.1524" layer="91"/>
-<label x="134.62" y="-30.48" size="1.778" layer="95"/>
+<wire x1="43.18" y1="17.78" x2="50.8" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="17.78" x2="50.8" y2="15.24" width="0.1524" layer="91"/>
+<label x="45.72" y="17.78" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="R24" gate="1" pin="E"/>
 <pinref part="GND20" gate="1" pin="GND"/>
-<wire x1="157.48" y1="-12.7" x2="157.48" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="35.56" x2="68.58" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND26" gate="1" pin="GND"/>
@@ -17890,8 +17890,8 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <net name="LCD_RS" class="0">
 <segment>
 <pinref part="X1" gate="-4" pin="KL"/>
-<wire x1="132.08" y1="-10.16" x2="142.24" y2="-10.16" width="0.1524" layer="91"/>
-<label x="134.62" y="-10.16" size="1.778" layer="95"/>
+<wire x1="43.18" y1="38.1" x2="53.34" y2="38.1" width="0.1524" layer="91"/>
+<label x="45.72" y="38.1" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="D9"/>
@@ -17918,9 +17918,9 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <label x="259.08" y="-7.62" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
-<wire x1="332.74" y1="88.9" x2="325.12" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="332.74" y1="93.98" x2="325.12" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="325.12" y1="88.9" x2="325.12" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="D11" gate="A" pin="C2"/>
+<pinref part="D11" gate="A" pin="C1"/>
 <label x="327.66" y="88.9" size="1.778" layer="95"/>
 <pinref part="R25" gate="G$1" pin="2"/>
 <wire x1="320.04" y1="93.98" x2="325.12" y2="93.98" width="0.1524" layer="91"/>
@@ -17946,8 +17946,8 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 </segment>
 <segment>
 <pinref part="X1" gate="-10" pin="KL"/>
-<wire x1="132.08" y1="-25.4" x2="144.78" y2="-25.4" width="0.1524" layer="91"/>
-<label x="134.62" y="-25.4" size="1.778" layer="95"/>
+<wire x1="43.18" y1="22.86" x2="55.88" y2="22.86" width="0.1524" layer="91"/>
+<label x="45.72" y="22.86" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="ENCODER1" class="0">
@@ -17974,15 +17974,15 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 </segment>
 <segment>
 <pinref part="X1" gate="-7" pin="KL"/>
-<wire x1="132.08" y1="-17.78" x2="144.78" y2="-17.78" width="0.1524" layer="91"/>
-<label x="134.62" y="-17.78" size="1.778" layer="95"/>
+<wire x1="43.18" y1="30.48" x2="55.88" y2="30.48" width="0.1524" layer="91"/>
+<label x="45.72" y="30.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LCD_EN" class="0">
 <segment>
 <pinref part="X1" gate="-6" pin="KL"/>
-<wire x1="132.08" y1="-15.24" x2="144.78" y2="-15.24" width="0.1524" layer="91"/>
-<label x="134.62" y="-15.24" size="1.778" layer="95"/>
+<wire x1="43.18" y1="33.02" x2="55.88" y2="33.02" width="0.1524" layer="91"/>
+<label x="45.72" y="33.02" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="D8"/>
@@ -17998,8 +17998,8 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 </segment>
 <segment>
 <pinref part="X1" gate="-8" pin="KL"/>
-<wire x1="132.08" y1="-20.32" x2="144.78" y2="-20.32" width="0.1524" layer="91"/>
-<label x="134.62" y="-20.32" size="1.778" layer="95"/>
+<wire x1="43.18" y1="27.94" x2="55.88" y2="27.94" width="0.1524" layer="91"/>
+<label x="45.72" y="27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LCD_D7" class="0">
@@ -18010,8 +18010,8 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 </segment>
 <segment>
 <pinref part="X1" gate="-9" pin="KL"/>
-<wire x1="132.08" y1="-22.86" x2="144.78" y2="-22.86" width="0.1524" layer="91"/>
-<label x="134.62" y="-22.86" size="1.778" layer="95"/>
+<wire x1="43.18" y1="25.4" x2="55.88" y2="25.4" width="0.1524" layer="91"/>
+<label x="45.72" y="25.4" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$16" class="0">
@@ -18028,8 +18028,8 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <net name="UP_BUT" class="0">
 <segment>
 <wire x1="327.66" y1="124.46" x2="327.66" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="327.66" y1="93.98" x2="332.74" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="D11" gate="A" pin="C1"/>
+<wire x1="327.66" y1="93.98" x2="332.74" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="D11" gate="A" pin="C2"/>
 <label x="327.66" y="101.6" size="1.778" layer="95"/>
 <pinref part="R23" gate="G$1" pin="2"/>
 <wire x1="325.12" y1="124.46" x2="327.66" y2="124.46" width="0.1524" layer="91"/>
@@ -18071,8 +18071,8 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <segment>
 <pinref part="X1" gate="-3" pin="KL"/>
 <pinref part="R24" gate="1" pin="S"/>
-<wire x1="132.08" y1="-7.62" x2="152.4" y2="-7.62" width="0.1524" layer="91"/>
-<label x="134.62" y="-7.62" size="1.778" layer="95"/>
+<wire x1="43.18" y1="40.64" x2="63.5" y2="40.64" width="0.1524" layer="91"/>
+<label x="45.72" y="40.64" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -18239,20 +18239,42 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 </sheet>
 </sheets>
 <errors>
+<approved hash="101,1,43.18,15.24,X1-13,KL,,,,"/>
+<approved hash="101,1,43.18,12.7,X1-14,KL,,,,"/>
+<approved hash="104,1,134.62,66.04,IC1,GND1,GND,,,"/>
+<approved hash="104,1,134.62,53.34,IC1,VS,VMOT,,,"/>
+<approved hash="104,1,134.62,43.18,IC1,GND2,GND,,,"/>
+<approved hash="104,1,165.1,43.18,IC1,GND3,GND,,,"/>
+<approved hash="104,1,165.1,45.72,IC1,VSS,+5V,,,"/>
+<approved hash="104,1,165.1,66.04,IC1,GND4,GND,,,"/>
+<approved hash="104,1,243.84,2.54,U1,GND1,GND,,,"/>
+<approved hash="104,1,241.3,2.54,U1,GND2,GND,,,"/>
+<approved hash="104,1,238.76,2.54,U1,5V,IOREF,,,"/>
+<approved hash="104,1,236.22,2.54,U1,3V,3V3,,,"/>
 <approved hash="208,1,193.04,45.72,+5V,sup,,,,"/>
 <approved hash="208,1,17.78,129.54,+5V,sup,,,,"/>
 <approved hash="208,1,2.54,129.54,+5V,out,,,,"/>
+<approved hash="208,1,5.08,83.82,+5V,sup,,,,"/>
 <approved hash="208,1,299.72,157.48,+5V,sup,,,,"/>
+<approved hash="208,1,309.88,137.16,+5V,sup,,,,"/>
+<approved hash="208,1,307.34,76.2,+5V,sup,,,,"/>
+<approved hash="208,1,307.34,106.68,+5V,sup,,,,"/>
+<approved hash="208,1,304.8,45.72,+5V,sup,,,,"/>
 <approved hash="208,1,345.44,106.68,+5V,sup,,,,"/>
 <approved hash="208,1,332.74,170.18,+5V,sup,,,,"/>
 <approved hash="208,1,345.44,160.02,+5V,sup,,,,"/>
-<approved hash="208,1,152.4,2.54,+5V,sup,,,,"/>
-<approved hash="208,1,144.78,-33.02,+5V,sup,,,,"/>
+<approved hash="208,1,63.5,50.8,+5V,sup,,,,"/>
+<approved hash="208,1,55.88,15.24,+5V,sup,,,,"/>
 <approved hash="208,1,99.06,48.26,+5V,sup,,,,"/>
 <approved hash="208,1,198.12,66.04,+5V,sup,,,,"/>
-<approved hash="208,1,157.48,0,+5V,sup,,,,"/>
+<approved hash="208,1,68.58,48.26,+5V,sup,,,,"/>
 <approved hash="208,1,279.4,99.06,+5V,sup,,,,"/>
 <approved hash="208,1,180.34,170.18,+5V,sup,,,,"/>
+<approved hash="106,1,236.22,2.54,3V3,,,,,"/>
+<approved hash="106,1,220.98,63.5,AREF,,,,,"/>
+<approved hash="105,1,-22.606,93.091,N$6,,,,,"/>
+<approved hash="113,1,-12.0805,98.0355,VIN-CONNECT,,,,,"/>
+<approved hash="113,1,171.121,166.759,JP1,,,,,"/>
 </errors>
 </schematic>
 </drawing>
