@@ -52,7 +52,7 @@ volatile bool e_stop_active = false;
 #define DOWN_BUT A0
 
 #define START_BUT A0
-bool start_active = false;
+bool start_active = true; //false;
 
 // pushbutton char's for which button is pressed
 #define SELECT 'S' // select / return button
