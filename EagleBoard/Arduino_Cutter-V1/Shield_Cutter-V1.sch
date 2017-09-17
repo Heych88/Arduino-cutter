@@ -16778,6 +16778,7 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <part name="FID6" library="SmartPrj" deviceset="FIDUCIALMOUNT" device=""/>
 <part name="X6" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-23-2021" device=""/>
 <part name="X1" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-23-2041" device=""/>
+<part name="F1" library="SmartPrj" deviceset="R-EU_" device="R1206" value="750mA"/>
 </parts>
 <sheets>
 <sheet>
@@ -16858,11 +16859,11 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <instance part="R2" gate="G$1" x="66.04" y="0" rot="R90"/>
 <instance part="GND27" gate="1" x="30.48" y="7.62" rot="R180"/>
 <instance part="GND28" gate="1" x="66.04" y="7.62" rot="R180"/>
-<instance part="SUPPLY3" gate="1" x="-111.76" y="38.1"/>
+<instance part="SUPPLY3" gate="1" x="-99.06" y="38.1"/>
 <instance part="SUPPLY1" gate="1" x="-127" y="38.1"/>
-<instance part="SUPPLY4" gate="1" x="-96.52" y="38.1"/>
-<instance part="P+4" gate="1" x="-83.82" y="58.42" smashed="yes">
-<attribute name="VALUE" x="-81.915" y="60.96" size="1.778" layer="96" rot="R180"/>
+<instance part="SUPPLY4" gate="1" x="-83.82" y="38.1"/>
+<instance part="P+4" gate="1" x="-71.12" y="58.42" smashed="yes">
+<attribute name="VALUE" x="-69.215" y="60.96" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="P+9" gate="1" x="-96.52" y="-7.62" smashed="yes">
 <attribute name="VALUE" x="-94.615" y="-5.08" size="1.778" layer="96" rot="R180"/>
@@ -16944,7 +16945,7 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <instance part="P+19" gate="1" x="243.84" y="88.9" smashed="yes">
 <attribute name="VALUE" x="245.745" y="91.44" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY5" gate="1" x="-83.82" y="38.1"/>
+<instance part="SUPPLY5" gate="1" x="-71.12" y="38.1"/>
 <instance part="X5" gate="-1" x="-60.96" y="-50.8"/>
 <instance part="X5" gate="-2" x="-60.96" y="-53.34"/>
 <instance part="X5" gate="-3" x="-60.96" y="-55.88"/>
@@ -16980,13 +16981,13 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <attribute name="VALUE" x="-28.575" y="-43.18" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="GND20" gate="1" x="-30.48" y="-66.04"/>
-<instance part="C2" gate="G$1" x="-96.52" y="48.26" smashed="yes">
-<attribute name="NAME" x="-94.996" y="48.641" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-94.996" y="43.561" size="1.778" layer="96"/>
+<instance part="C2" gate="G$1" x="-83.82" y="48.26" smashed="yes">
+<attribute name="NAME" x="-82.296" y="48.641" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-82.296" y="43.561" size="1.778" layer="96"/>
 </instance>
-<instance part="C3" gate="G$1" x="-83.82" y="48.26" smashed="yes">
-<attribute name="NAME" x="-81.534" y="48.895" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-81.534" y="46.609" size="1.778" layer="96"/>
+<instance part="C3" gate="G$1" x="-71.12" y="48.26" smashed="yes">
+<attribute name="NAME" x="-68.834" y="48.895" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-68.834" y="46.609" size="1.778" layer="96"/>
 </instance>
 <instance part="C8" gate="G$1" x="177.8" y="73.66" smashed="yes">
 <attribute name="NAME" x="180.086" y="74.295" size="1.778" layer="95"/>
@@ -17033,7 +17034,7 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <attribute name="VALUE" x="128.27" y="101.092" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="L5" gate="G$1" x="129.54" y="83.82" rot="R270"/>
-<instance part="IC2" gate="G$1" x="-111.76" y="55.88"/>
+<instance part="IC2" gate="G$1" x="-99.06" y="55.88"/>
 <instance part="C1" gate="G$1" x="-127" y="48.26" smashed="yes">
 <attribute name="NAME" x="-125.476" y="48.641" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-125.476" y="43.561" size="1.778" layer="96"/>
@@ -17128,6 +17129,7 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <instance part="X1" gate="-2" x="-149.86" y="66.04" rot="R180"/>
 <instance part="X1" gate="-3" x="-149.86" y="73.66" rot="R180"/>
 <instance part="X1" gate="-4" x="-149.86" y="76.2" rot="R180"/>
+<instance part="F1" gate="G$1" x="-119.38" y="55.88" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -17144,16 +17146,16 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <pinref part="P+1" gate="1" pin="+5V"/>
 </segment>
 <segment>
-<wire x1="-99.06" y1="55.88" x2="-96.52" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-86.36" y1="55.88" x2="-83.82" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="P+4" gate="1" pin="+5V"/>
-<wire x1="-96.52" y1="55.88" x2="-83.82" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="-83.82" y1="50.8" x2="-83.82" y2="55.88" width="0.1524" layer="91"/>
-<junction x="-83.82" y="55.88"/>
+<wire x1="-83.82" y1="55.88" x2="-71.12" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-71.12" y1="50.8" x2="-71.12" y2="55.88" width="0.1524" layer="91"/>
+<junction x="-71.12" y="55.88"/>
 <pinref part="C3" gate="G$1" pin="1"/>
 <pinref part="IC2" gate="G$1" pin="VOUT"/>
 <pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="-96.52" y1="50.8" x2="-96.52" y2="55.88" width="0.1524" layer="91"/>
-<junction x="-96.52" y="55.88"/>
+<wire x1="-83.82" y1="50.8" x2="-83.82" y2="55.88" width="0.1524" layer="91"/>
+<junction x="-83.82" y="55.88"/>
 </segment>
 <segment>
 <wire x1="-40.64" y1="-10.16" x2="-40.64" y2="-12.7" width="0.1524" layer="91"/>
@@ -17378,7 +17380,7 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <pinref part="GND28" gate="1" pin="GND"/>
 </segment>
 <segment>
-<wire x1="-96.52" y1="43.18" x2="-96.52" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="43.18" x2="-83.82" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="SUPPLY4" gate="1" pin="GND"/>
 <pinref part="C2" gate="G$1" pin="2"/>
 </segment>
@@ -17431,7 +17433,7 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 </segment>
 <segment>
 <pinref part="SUPPLY5" gate="1" pin="GND"/>
-<wire x1="-83.82" y1="40.64" x2="-83.82" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="-71.12" y1="40.64" x2="-71.12" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="2"/>
 </segment>
 <segment>
@@ -17545,7 +17547,7 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <segment>
 <pinref part="IC2" gate="G$1" pin="GND"/>
 <pinref part="SUPPLY3" gate="1" pin="GND"/>
-<wire x1="-111.76" y1="43.18" x2="-111.76" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="-99.06" y1="43.18" x2="-99.06" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C6" gate="G$1" pin="1"/>
@@ -18225,8 +18227,6 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <net name="FUSE_RETURN" class="0">
 <segment>
 <junction x="-127" y="55.88"/>
-<pinref part="IC2" gate="G$1" pin="VIN"/>
-<wire x1="-127" y1="55.88" x2="-124.46" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="-127" y1="50.8" x2="-127" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="D9" gate="G$1" pin="K"/>
@@ -18240,6 +18240,8 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <wire x1="-147.32" y1="76.2" x2="-134.62" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="X6" gate="-1" pin="S"/>
 <pinref part="X1" gate="-4" pin="S"/>
+<pinref part="F1" gate="G$1" pin="2"/>
+<wire x1="-124.46" y1="55.88" x2="-127" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="POWERIN" class="1">
@@ -18253,6 +18255,13 @@ include  Type MT6; con-amp-mt6.lbr&lt;p&gt;
 <junction x="-144.78" y="66.04"/>
 <pinref part="X1" gate="-3" pin="S"/>
 <pinref part="X1" gate="-2" pin="S"/>
+</segment>
+</net>
+<net name="N$18" class="0">
+<segment>
+<pinref part="F1" gate="G$1" pin="1"/>
+<pinref part="IC2" gate="G$1" pin="VIN"/>
+<wire x1="-114.3" y1="55.88" x2="-111.76" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
