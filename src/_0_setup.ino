@@ -12,7 +12,7 @@ char* length_str = "Length: %dmm ";
 char blank_line[DISPLAY_COLS];
 
 // initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
+LiquidCrystal lcd(9,8,6,7,4,5); //(9, 8, 7, 6, 5, 4); // 8,9,4,5,6,7
 
 // motor globals and parameters
 #define FORWARD LOW
