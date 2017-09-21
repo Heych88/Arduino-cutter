@@ -63,7 +63,8 @@ char pollButton() {
 
   if ((millis() - pb_time) >= 50) {
     pb_time = millis();
-    if(!START_BUT){
+    if(!digitalRead(START_BUT)){
+      printToScreen("START_BUT", 0, 0);
       // Start stop button pressed
       if(start_active) {
         start_active = false;
@@ -75,16 +76,18 @@ char pollButton() {
         // do nothing until the push button is released
         delay(20);
       }
-
       button = RUN;
-      
-    } else if (!UP_BUT){
+
+    } else if (!digitalRead(UP_BUT)){
+      printToScreen("UP_BUT", 0, 0);
       // Up button pressed
       button = UP;
-    } else if (!DOWN_BUT){
+    } else if (!digitalRead(DOWN_BUT)){
+      printToScreen("DOWN_BUT", 0, 0);
       // Down button Press
       button = DOWN;
-    } else if (!SELECT_BUT){
+    } else if (!digitalRead(SELECT_BUT)){
+      printToScreen("SELECT_BUT", 0, 0);
       // Select button pressed
       button = SELECT;
     } else {

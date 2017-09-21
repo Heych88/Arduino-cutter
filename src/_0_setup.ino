@@ -88,10 +88,10 @@ void setup() {
 
   //homeMenu();
 
-  pinMode(SELECT_BUT, INPUT_PULLUP);
-  pinMode(UP_BUT, INPUT_PULLUP);
-  pinMode(DOWN_BUT, INPUT_PULLUP);
-  pinMode(START_BUT, INPUT_PULLUP);
+  pinMode(SELECT_BUT, INPUT);
+  pinMode(UP_BUT, INPUT);
+  pinMode(DOWN_BUT, INPUT);
+  pinMode(START_BUT, INPUT);
 
   // init motor parameters
   /*pinMode(PWM_B, OUTPUT);
