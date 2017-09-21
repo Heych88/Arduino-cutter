@@ -1,4 +1,4 @@
-
+/*
 int motor_run(const bool use_motor_A, auto motor_dir) {
   // run the motor in the forward direction at the desired pwm
   // @param: use_motor_A, true => will use the motorA pins
@@ -41,4 +41,4 @@ void motor_stop(const bool use_motor_A) {
     analogWrite(PWM_B, 0); // set the pwm to zero
     digitalWrite(BRAKE_B, HIGH);  // turn off the brake
   }  
-}
+}*/

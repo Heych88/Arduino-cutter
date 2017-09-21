@@ -18,7 +18,7 @@ LiquidCrystal lcd(9,8,6,7,4,5); //(9, 8, 7, 6, 5, 4); // 8,9,4,5,6,7
 #define FORWARD LOW
 #define BACKWARD HIGH
 // motor A
-#define PWM_A 3
+/*#define PWM_A 13
 #define DIR_A 12
 #define BRAKE_A 9
 #define SENSE_A A0
@@ -27,7 +27,7 @@ LiquidCrystal lcd(9,8,6,7,4,5); //(9, 8, 7, 6, 5, 4); // 8,9,4,5,6,7
 #define PWM_B 11
 #define DIR_B 13
 #define BRAKE_B 8
-#define SENSE_B A1
+#define SENSE_B A1*/
 
 volatile int encoderCount = 0; // number of encoder revolutions
 volatile unsigned long time_stamp = millis(); // time between speed calculations
@@ -47,11 +47,10 @@ const float wheel_dist_ppr = wheel_diam * PI / ecode_ppr;
 char* estop_str = "E-STOP";
 volatile bool e_stop_active = false;
 
-#define SELECT_BUT A0
-#define UP_BUT A0
-#define DOWN_BUT A0
-
-#define START_BUT A0
+#define SELECT_BUT A3
+#define UP_BUT 3
+#define DOWN_BUT A1
+#define START_BUT A2
 bool start_active = true; //false;
 
 // pushbutton char's for which button is pressed
@@ -87,10 +86,17 @@ void setup() {
     blank_line[i] = ' ';
   }
 
+  //homeMenu();
+
+  pinMode(SELECT_BUT, INPUT_PULLUP);
+  pinMode(UP_BUT, INPUT_PULLUP);
+  pinMode(DOWN_BUT, INPUT_PULLUP);
+  pinMode(START_BUT, INPUT_PULLUP);
+
   // init motor parameters
-  pinMode(PWM_B, OUTPUT);
+  /*pinMode(PWM_B, OUTPUT);
   pinMode(DIR_B, OUTPUT);
-  pinMode(BRAKE_B, OUTPUT);
+  pinMode(BRAKE_B, OUTPUT);*/
 
   // set pin 0 as an intterupt for the E-stop 
   delay(500);
@@ -98,10 +104,10 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(E_STOP_BUT), intEStop, CHANGE);
   
   // set pin 2 as an intterupt on the rising edge that calls he function intEncodeA() on the interrupt 
-  pinMode(INT_ENCODE_A, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(INT_ENCODE_A), intEncodeA, RISING);
+  //pinMode(INT_ENCODE_A, INPUT_PULLUP);
+  //attachInterrupt(digitalPinToInterrupt(INT_ENCODE_A), intEncodeA, RISING);
 
   // check if E-stop is active
-  if (digitalRead(E_STOP_BUT) == LOW) e_stop_active = true;
+  if (digitalRead(E_STOP_BUT) == HIGH) e_stop_active = true;
 }
 

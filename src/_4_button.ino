@@ -3,7 +3,7 @@ void eStop() {
   // E-Stop is active so stop the machine
   
     //motor_stop(true); // stop motor A
-    motor_stop(false); // stop motor B
+    //motor_stop(false); // stop motor B
 
     // dispaly E-Stop active
     printToScreen(estop_str, 0, 0, true, true);
@@ -61,11 +61,9 @@ char pollButton() {
   // check if E-stop is active
   if (digitalRead(E_STOP_BUT) == LOW) e_stop_active = true;
 
-  int pb_value = analogRead(SELECT_BUT); 
-
   if ((millis() - pb_time) >= 50) {
     pb_time = millis();
-    if(pb_value < 10){
+    if(!START_BUT){
       // Start stop button pressed
       if(start_active) {
         start_active = false;
@@ -73,23 +71,20 @@ char pollButton() {
         start_active = true;
       }
 
-      while(analogRead(SELECT_BUT) < 10){
+      while(!START_BUT){
         // do nothing until the push button is released
         delay(20);
       }
 
       button = RUN;
       
-    } else if (pb_value < 128){
+    } else if (!UP_BUT){
       // Up button pressed
       button = UP;
-    } else if (pb_value < 300){
+    } else if (!DOWN_BUT){
       // Down button Press
       button = DOWN;
-    } else if (pb_value < 500){
-      // Left button press
-      button = LEFT;
-    } else if (pb_value < 700){
+    } else if (!SELECT_BUT){
       // Select button pressed
       button = SELECT;
     } else {
@@ -103,6 +98,5 @@ char pollButton() {
 
   return button;
 }
-
 
 

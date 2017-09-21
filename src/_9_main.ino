@@ -1,7 +1,7 @@
 // main program loop 
 void loop() {
-
-  pollButton();
+  
+  //pollButton();
   if (e_stop_active) {
     start_active = false;
     // E-Stop is active so stop the machine
@@ -11,14 +11,14 @@ void loop() {
     
   } else {
     // Normal running program
-    
+    //homeMenu();
     // check if the start button is active to run the system
     if (start_active) {
       // start running the system using motor B
-      motor_run(false, FORWARD);
+      //motor_run(false, FORWARD);
     } else {
       // stop motor B
-      motor_stop(false);
+      //motor_stop(false);
     }
 
     if ((!menu_selected) && (state == MAIN)) homeMenu();
