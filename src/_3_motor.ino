@@ -1,4 +1,4 @@
-/*
+
 int motor_run(const bool use_motor_A, auto motor_dir) {
   // run the motor in the forward direction at the desired pwm
   // @param: use_motor_A, true => will use the motorA pins
@@ -8,7 +8,7 @@ int motor_run(const bool use_motor_A, auto motor_dir) {
   unsigned int sense_pin;
   unsigned int pwm;
   
-  if (use_motor_A) {
+  /*if (use_motor_A) {
     digitalWrite(DIR_A, motor_dir); // set the supplied direction
     digitalWrite(BRAKE_A, LOW);  // turn off the brake
     pwm_pin = PWM_A;
@@ -18,27 +18,31 @@ int motor_run(const bool use_motor_A, auto motor_dir) {
     digitalWrite(BRAKE_B, LOW);  // turn off the brake
     pwm_pin = PWM_B;
     sense_pin = SENSE_B;
-  }  
+  } */ 
 
   // check that the pwm value is within the desired threshholds
-  if (pwm_desired <= 1) pwm = 0;
+  if (desired_speed <= 1) pwm = 0;
   else {
-    pwm = (pwm_desired / 2) + 50;
+    pwm = (desired_speed / 2) + 50;
   }
   
-  analogWrite(pwm_pin, pwm);
+  // set the speed at 60 rpm:
+  myStepper.setSpeed(desired_speed);
+  myStepper.step(stepsPerRevolution);
   
-  return analogRead(sense_pin);
+  return 0;
 }
 
 void motor_stop(const bool use_motor_A) {
   // stops the desired motor
   // @param: use_motor_A, true => will use the motorA pins
-  if (use_motor_A) {
+  /*if (use_motor_A) {
     analogWrite(PWM_A, 0); // set the pwm to zero
     digitalWrite(BRAKE_A, HIGH);  // turn off the brake
   } else {
     analogWrite(PWM_B, 0); // set the pwm to zero
     digitalWrite(BRAKE_B, HIGH);  // turn off the brake
-  }  
-}*/
+  }  */
+
+  myStepper.step(0);
+}

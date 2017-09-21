@@ -1,4 +1,5 @@
 #include <LiquidCrystal.h>
+#include <Stepper.h>
 
 // LCD globals and parameters
 #define INT_ENCODE_A 2
@@ -29,10 +30,14 @@ LiquidCrystal lcd(9,8,6,7,4,5); //(9, 8, 7, 6, 5, 4); // 8,9,4,5,6,7
 #define BRAKE_B 8
 #define SENSE_B A1*/
 
+const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution
+// initialize the stepper library on pins 8 through 11:
+Stepper myStepper(stepsPerRevolution, 10, 11, 12, 13);
+
 volatile int encoderCount = 0; // number of encoder revolutions
 volatile unsigned long time_stamp = millis(); // time between speed calculations
 volatile float motor_speed = 0; // the current speed of the motor
-int pwm_desired = 60; // desired pwm rate of the motor
+int desired_speed = 60; // desired pwm rate of the motor
 int qty_desired = 0; // total number of sleeves required for production
 int qty_current = 0; // number of sleeves already produced
 int cut_length = 0; // length of each piece
@@ -85,8 +90,6 @@ void setup() {
   for (int i=0; i < DISPLAY_COLS; i++) {
     blank_line[i] = ' ';
   }
-
-  //homeMenu();
 
   pinMode(SELECT_BUT, INPUT);
   pinMode(UP_BUT, INPUT);

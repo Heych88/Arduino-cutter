@@ -61,7 +61,7 @@ char pollButton() {
   // check if E-stop is active
   if (digitalRead(E_STOP_BUT) == HIGH) e_stop_active = true;
 
-  if ((millis() - pb_time) >= 50) {
+  if ((millis() - pb_time) >= 250) {
     pb_time = millis();
     if(!digitalRead(START_BUT)){
       printToScreen("START_BUT", 0, 0);
@@ -72,22 +72,15 @@ char pollButton() {
         start_active = true;
       }
 
-      while(!START_BUT){
-        // do nothing until the push button is released
-        delay(20);
-      }
       button = RUN;
 
     } else if (!digitalRead(UP_BUT)){
-      printToScreen("UP_BUT", 0, 0);
       // Up button pressed
       button = UP;
     } else if (!digitalRead(DOWN_BUT)){
-      printToScreen("DOWN_BUT", 0, 0);
       // Down button Press
       button = DOWN;
     } else if (!digitalRead(SELECT_BUT)){
-      printToScreen("SELECT_BUT", 0, 0);
       // Select button pressed
       button = SELECT;
     } else {
@@ -98,6 +91,11 @@ char pollButton() {
   }
 
   if (button != NO_PRESS) updateButton(button);
+
+  while(!digitalRead(START_BUT)&&!digitalRead(UP_BUT)&&!digitalRead(DOWN_BUT)&&!digitalRead(SELECT_BUT)&&!menu_selected){
+    // do nothing until the push button is released
+    delay(20);
+  }
 
   return button;
 }

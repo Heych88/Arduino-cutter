@@ -33,13 +33,13 @@ void speedMenu(const char button) {
   switch(button) {
     case UP:
       // up button pressed, increment the desired quantity
-      pwm_desired++;
-      if(pwm_desired > 100) pwm_desired = 100;
+      desired_speed++;
+      if(desired_speed > 100) desired_speed = 100;
       break;
     case DOWN:
       // deincrement the desired quantity
-      pwm_desired--;
-      if(pwm_desired < 0) pwm_desired = 0;
+      desired_speed--;
+      if(desired_speed < 0) desired_speed = 0;
       break;
     case SELECT:
       // return to home menu
@@ -50,7 +50,7 @@ void speedMenu(const char button) {
   
   String qty_str = String("Set Speed:");
   printToScreen(qty_str, 0, 0, true, false);
-  printToScreen(String(pwm_desired), 0, 1, true, false);
+  printToScreen(String(desired_speed), 0, 1, true, false);
 
   // blink the cursor to indicate the menu has been selected
   if (menu_selected) lcd.blink();

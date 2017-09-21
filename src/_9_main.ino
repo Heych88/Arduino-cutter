@@ -15,14 +15,14 @@ void loop() {
     // check if the start button is active to run the system
     if (start_active) {
       // start running the system using motor B
-      //motor_run(false, FORWARD);
+      motor_run(false, FORWARD);
     } else {
       // stop motor B
-      //motor_stop(false);
+      motor_stop(false);
     }
 
     if ((!menu_selected) && (state == MAIN)) homeMenu();
-    if (!e_stop_active) delay(500);
+    if (!e_stop_active) delay(100);
   }
 }
 
