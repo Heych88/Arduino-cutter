@@ -59,7 +59,7 @@ char pollButton() {
   char button = NO_PRESS;
 
   // check if E-stop is active
-  if (digitalRead(E_STOP_BUT) == LOW) e_stop_active = true;
+  if (digitalRead(E_STOP_BUT) == HIGH) e_stop_active = true;
 
   if ((millis() - pb_time) >= 50) {
     pb_time = millis();

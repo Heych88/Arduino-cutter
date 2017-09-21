@@ -1,7 +1,6 @@
 // main program loop 
 void loop() {
   
-  //pollButton();
   if (e_stop_active) {
     start_active = false;
     // E-Stop is active so stop the machine
@@ -11,7 +10,8 @@ void loop() {
     
   } else {
     // Normal running program
-    //homeMenu();
+    pollButton();
+    
     // check if the start button is active to run the system
     if (start_active) {
       // start running the system using motor B
