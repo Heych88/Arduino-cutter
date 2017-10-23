@@ -11,14 +11,15 @@ void loop() {
   } else {
     // Normal running program
     pollButton();
+
+    start_active = true;
     
     // check if the start button is active to run the system
     if (start_active) {
       // start running the system using motor B
-      motor_run(false, FORWARD);
+      motor_run(FORWARD);
     } else {
-      // stop motor B
-      motor_stop(false);
+      motor_stop();
     }
 
     if ((!menu_selected) && (state == MAIN)) homeMenu();

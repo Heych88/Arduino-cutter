@@ -1,12 +1,10 @@
 
 void eStop() {
   // E-Stop is active so stop the machine
-  
-    //motor_stop(true); // stop motor A
-    //motor_stop(false); // stop motor B
+  motor_stop();
 
-    // dispaly E-Stop active
-    printToScreen(estop_str, 0, 0, true, true);
+  // dispaly E-Stop active
+  printToScreen(estop_str, 0, 0, true, true);
 
 }
 
@@ -56,48 +54,18 @@ void updateButton(const char button) {
 
 char pollButton() {
 
-  char button = NO_PRESS;
-
   // check if E-stop is active
   if (digitalRead(E_STOP_BUT) == HIGH) e_stop_active = true;
 
-  if ((millis() - pb_time) >= 250) {
-    pb_time = millis();
-    if(!digitalRead(START_BUT)){
-      printToScreen("START_BUT", 0, 0);
-      // Start stop button pressed
-      if(start_active) {
-        start_active = false;
-      } else {
-        start_active = true;
-      }
+  // delay between button presses
+  if ((millis() - pb_time) >= 150) {
+    pb_time = millis();  
 
-      button = RUN;
+    if (button != NO_PRESS) updateButton(button);
 
-    } else if (!digitalRead(UP_BUT)){
-      // Up button pressed
-      button = UP;
-    } else if (!digitalRead(DOWN_BUT)){
-      // Down button Press
-      button = DOWN;
-    } else if (!digitalRead(SELECT_BUT)){
-      // Select button pressed
-      button = SELECT;
-    } else {
-       button = NO_PRESS;
-    }
-  } else {
-     button = NO_PRESS;
+    // Only accept held down push button inputs if a menu has been selected
+    if(!menu_selected || button == SELECT) button = NO_PRESS;
   }
-
-  if (button != NO_PRESS) updateButton(button);
-
-  while(!digitalRead(START_BUT)&&!digitalRead(UP_BUT)&&!digitalRead(DOWN_BUT)&&!digitalRead(SELECT_BUT)&&!menu_selected){
-    // do nothing until the push button is released
-    delay(20);
-  }
-
-  return button;
 }
 
 
