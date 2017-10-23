@@ -17,8 +17,7 @@ void loop() {
       // start running the system using motor B
       motor_run(false, FORWARD);
     } else {
-      // stop motor B
-      motor_stop(false);
+      motor_stop();
     }
 
     if ((!menu_selected) && (state == MAIN)) homeMenu();

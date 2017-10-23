@@ -1,12 +1,10 @@
 
 void eStop() {
   // E-Stop is active so stop the machine
-  
-    //motor_stop(true); // stop motor A
-    //motor_stop(false); // stop motor B
+  motor_stop();
 
-    // dispaly E-Stop active
-    printToScreen(estop_str, 0, 0, true, true);
+  // dispaly E-Stop active
+  printToScreen(estop_str, 0, 0, true, true);
 
 }
 
@@ -56,6 +54,8 @@ void updateButton(const char button) {
 
 char pollButton() {
 
+  String str;
+
   char button = NO_PRESS;
 
   // check if E-stop is active
@@ -68,9 +68,13 @@ char pollButton() {
       // Start stop button pressed
       if(start_active) {
         start_active = false;
+        str = "True";
       } else {
         start_active = true;
+        str = "False";
       }
+
+      printToScreen(str, 0, 0);
 
       button = RUN;
 

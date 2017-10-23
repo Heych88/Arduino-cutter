@@ -31,7 +31,7 @@ LiquidCrystal lcd(9,8,6,7,4,5); //(9, 8, 7, 6, 5, 4); // 8,9,4,5,6,7
 #define SENSE_B A1*/
 
 const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution
-// initialize the stepper library on pins 8 through 11:
+// initialize the stepper library on pins 8 through 11
 Stepper myStepper(stepsPerRevolution, 10, 11, 12, 13);
 
 volatile int encoderCount = 0; // number of encoder revolutions
@@ -97,9 +97,8 @@ void setup() {
   pinMode(START_BUT, INPUT);
 
   // init motor parameters
-  /*pinMode(PWM_B, OUTPUT);
-  pinMode(DIR_B, OUTPUT);
-  pinMode(BRAKE_B, OUTPUT);*/
+  pinMode(SDA, OUTPUT);
+  pinMode(SCL, OUTPUT);
 
   // set pin 0 as an intterupt for the E-stop 
   delay(500);
