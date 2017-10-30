@@ -17,7 +17,7 @@ LiquidCrystal lcd(9,8,6,7,4,5); //(9, 8, 7, 6, 5, 4); // 8,9,4,5,6,7
 // motor globals and parameters
 const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution
 // initialize the stepper library on pins 8 through 11
-Stepper myStepper(stepsPerRevolution, 10, 11, 12, 13);
+
 #define FORWARD LOW
 #define BACKWARD HIGH
 
@@ -44,7 +44,7 @@ volatile bool e_stop_active = false;
 #define UP_BUT 3
 #define DOWN_BUT A1
 #define START_BUT A2
-bool start_active = true; //false;
+volatile bool start_active = true;
 
 // pushbutton char's for which button is pressed
 #define SELECT 'S' // select / return button
@@ -68,6 +68,12 @@ bool menu_selected = false;  // keeps track if the user has enter a menu previou
 
 volatile char button; // tracks the button pressed
 
+
+// Solenoids
+#define SOLENOID_CUT A4
+#define SOLENOID_PIERCE A5
+
+
 void setup() {
   // set up the LCD's number of columns and rows:
   lcd.begin(DISPLAY_COLS, DISPLAY_ROWS);
@@ -84,7 +90,10 @@ void setup() {
 
   // init motor parameters
   pinMode(SDA, OUTPUT);
-  //pinMode(SCL, OUTPUT);
+
+  // init solenoid parameters
+  pinMode(SOLENOID_CUT, OUTPUT);
+  pinMode(SOLENOID_PIERCE, OUTPUT);
 
   // set the E-stop button pin as an intterupt 
   delay(500);
