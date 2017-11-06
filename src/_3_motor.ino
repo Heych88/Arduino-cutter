@@ -1,4 +1,3 @@
-const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
 
 void motor_stop() {
   // stops the stepper motor and puts it in a low power state

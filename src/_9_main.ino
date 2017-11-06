@@ -1,5 +1,22 @@
-int run_one_loop(){
+int run_one_sleeve(){
+  // produces a single plastic sleeve
+
+  if(qty_pierce > 0) {
+    motor_run(pierce_length);
+    pierce_solenoid();
   
+    if(qty_pierce == 2){
+      motor_run(cut_length - (qty_pierce * pierce_length));
+      pierce_solenoid();
+      motor_run(pierce_length);
+    } else {
+      motor_run(cut_length - pierce_length);
+    }
+  }else{
+    motor_run(cut_length);
+  }
+
+  cut_solenoid(); // cut sleeve to desired length
 }
 
 // main program loop 
@@ -21,8 +38,8 @@ void loop() {
     // check if the start button is active to run the system
     if (start_active) {
       // start running the system using motor B
-      motor_run(1000);
-      cut_solenoid();
+      run_one_sleeve();
+      delay(500);
     } else {
       motor_stop();
     }

@@ -1,8 +1,10 @@
 /************************************** Motor *****************************************/
 int desired_speed = 60; // desired pwm rate of the motor
 
-/************************************** Menu ******************************************/
-bool menu_selected = false;  // keeps track if the user has enter a menu previously true => menu has been enter previously
+/****************************** drive wheel parameters ********************************/
+const float wheel_diam = 61.0;  // diameter of the wheel
+const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
+const float wheel_dist_per_step = wheel_diam * PI / stepsPerRevolution; // distance travelled per step
 
 /*********************************** Push Button **************************************/
 // pushbutton char's for which button is pressed
@@ -14,7 +16,8 @@ bool menu_selected = false;  // keeps track if the user has enter a menu previou
 
 volatile char button; // tracks the button pressed
 
-/**************************************************************************************/
+/************************************** Menu ******************************************/
+bool menu_selected = false;  // keeps track if the user has enter a menu previously true => menu has been enter previously
 
 // define the menu states classes
 #define MAIN 0  // main menu state
@@ -31,6 +34,8 @@ int qty_current = 0; // number of sleeves already produced
 int cut_length = 25; // length of each piece
 int pierce_length = 5; // length of each piece
 int qty_pierce = 2; // length of each piece
+
+/**************************************************************************************/
 
 void printToScreen(const String str, const short col, const short row, const bool clear_row=true, const bool clear_screen=false) {
   // prints a string to the display in the defined cursor position
