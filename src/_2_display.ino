@@ -1,3 +1,17 @@
+/************************************** Motor *****************************************/
+int desired_speed = 60; // desired pwm rate of the motor
+
+/************************************** Menu ******************************************/
+bool menu_selected = false;  // keeps track if the user has enter a menu previously true => menu has been enter previously
+
+// define the menu states classes
+#define MAIN 0  // main menu state
+#define SPEED 1 // speed menu state
+#define QTY 2 // quantity menu state
+#define LENGTH 3 // length of cut menu state
+
+short state = MAIN; // the current system state
+
 /*
 void printToScreen(const String str, const short col, const short row, const bool clear_row=true, const bool clear_screen=false) {
   // prints a string to the display in the defined cursor position
