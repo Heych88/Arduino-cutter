@@ -93,7 +93,7 @@ char pollButton() {
     // Only accept held down push button inputs if a menu has been selected
     //if(!menu_selected || button == SELECT) button = NO_PRESS;
     while((!menu_selected) && ((!digitalRead(START_BUT)) || (!digitalRead(UP_BUT)) || 
-          (!digitalRead(DOWN_BUT)) || (!digitalRead(SELECT_BUT)))){
+          (!digitalRead(DOWN_BUT))) || (!digitalRead(SELECT_BUT))){
       delay(10);
     }
   }
