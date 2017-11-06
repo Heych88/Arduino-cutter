@@ -20,6 +20,10 @@ LiquidCrystal lcd(9,8,6,7,4,5);
 
 char blank_line[DISPLAY_COLS];
 
+/************************************ Solenoids **************************************/
+#define SOLENOID_CUT A4
+#define SOLENOID_PIERCE A5
+
 /*************************************************************************************/
 
 void setup() {
@@ -34,6 +38,10 @@ void setup() {
   pinMode(DOWN_BUT, INPUT_PULLUP);
   pinMode(START_BUT, INPUT_PULLUP);
   pinMode(BUTTON_INTERRUPT, OUTPUT);
+
+  // init solenoid parameters
+  pinMode(SOLENOID_CUT, OUTPUT);
+  pinMode(SOLENOID_PIERCE, OUTPUT);
 
   // set the E-stop button pin as an intterupt
   delay(500);

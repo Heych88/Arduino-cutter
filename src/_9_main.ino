@@ -18,6 +18,7 @@ void loop() {
     if (start_active) {
       // start running the system using motor B
       motor_run(1000);
+      cut_solenoid();
     } else {
       motor_stop();
     }
