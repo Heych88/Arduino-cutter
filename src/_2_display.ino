@@ -4,6 +4,18 @@ int desired_speed = 60; // desired pwm rate of the motor
 /************************************** Menu ******************************************/
 bool menu_selected = false;  // keeps track if the user has enter a menu previously true => menu has been enter previously
 
+/*********************************** Push Button **************************************/
+// pushbutton char's for which button is pressed
+#define SELECT 'S' // select / return button
+#define RUN 'R' // stop start button (A)ctive
+#define UP 'U' // up pushbutton
+#define DOWN 'D' // down pushbutton
+#define NO_PRESS 'N' // clears a button press
+
+volatile char button; // tracks the button pressed
+
+/**************************************************************************************/
+
 // define the menu states classes
 #define MAIN 0  // main menu state
 #define SPEED 1 // speed menu state
@@ -12,7 +24,11 @@ bool menu_selected = false;  // keeps track if the user has enter a menu previou
 
 short state = MAIN; // the current system state
 
-/*
+int qty_desired = 0; // total number of sleeves required for production
+int qty_current = 0; // number of sleeves already produced
+int cut_length = 0; // length of each piece
+
+
 void printToScreen(const String str, const short col, const short row, const bool clear_row=true, const bool clear_screen=false) {
   // prints a string to the display in the defined cursor position
   // @param: str, string to print to screen
@@ -145,4 +161,4 @@ void setMenu() {
       break;      
   }
 }
-*/
+

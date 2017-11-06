@@ -22,7 +22,7 @@ void loop() {
       motor_stop();
     }
 
-    //if ((!menu_selected) && (state == MAIN)) homeMenu();
+    if ((!menu_selected) && (state == MAIN)) homeMenu();
     if (!e_stop_active) delay(100);
   }
 }

@@ -11,6 +11,17 @@
 
 volatile bool e_stop_active = false;
 
+/*************************************** LCD *****************************************/
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(9,8,6,7,4,5);
+
+#define DISPLAY_ROWS 2
+#define DISPLAY_COLS 16
+
+char blank_line[DISPLAY_COLS];
+
+/*************************************************************************************/
+
 void setup() {
 
   // init motor parameters
@@ -28,6 +39,14 @@ void setup() {
   delay(500);
   pinMode(E_STOP_BUT, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(E_STOP_BUT), intEStop, CHANGE);
+
+  // set up the LCD's number of columns and rows:
+  lcd.begin(DISPLAY_COLS, DISPLAY_ROWS);
+
+  // create a blank string for clearing the text on one row of the LCD display
+  for (int i=0; i < DISPLAY_COLS; i++) {
+    blank_line[i] = ' ';
+  }
 
   // check if E-stop is active
   if (digitalRead(E_STOP_BUT) == HIGH) e_stop_active = true;

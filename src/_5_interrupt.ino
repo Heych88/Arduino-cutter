@@ -1,5 +1,4 @@
 
-
 void intEStop() {
 
   // E-stop has been pressed when the digital pin is high
@@ -9,6 +8,6 @@ void intEStop() {
     e_stop_active = false;
   }
   start_active = false;
-  motor_stop();
+  eStop();
 }
 
