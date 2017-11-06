@@ -17,12 +17,12 @@ int run_one_sleeve(){
   }
 
   cut_solenoid(); // cut sleeve to desired length
+
+  qty_current += 1;
 }
 
 // main program loop 
 void loop() {
-
-  //printToScreen(String(start_active), 0, 0);
   
   if (e_stop_active) {
     start_active = false;
@@ -32,17 +32,22 @@ void loop() {
     delay(1000);
     
   } else {
-    // Normal running program
-    pollButton();
-    
     // check if the start button is active to run the system
     if (start_active) {
-      // start running the system using motor B
-      run_one_sleeve();
-      delay(500);
-    } else {
-      motor_stop();
-    }
+      while(qty_current < qty_desired){
+        if (e_stop_active) break;
+        
+        // Normal running program
+        pollButton();
+        run_one_sleeve();
+        homeMenu(); // update the display to show the current qty
+        delay(100);
+      }
+      start_active = false;
+    } 
+    
+    motor_stop();
+    pollButton();
 
     if ((!menu_selected) && (state == MAIN)) homeMenu();
     if (!e_stop_active) delay(100);

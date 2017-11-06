@@ -21,11 +21,12 @@ bool menu_selected = false;  // keeps track if the user has enter a menu previou
 
 // define the menu states classes
 #define MAIN 0  // main menu state
-#define SPEED 1 // speed menu state
-#define QTY 2 // quantity menu state
-#define LENGTH 3 // length of cut menu state
-#define PIERCE_LENGTH 4 // length from edges of each pierce
-#define PIERCE_QTY 5 // number of pierces
+#define CLEAR_QTY 1 // clear the already cut qty
+#define SPEED 2 // speed menu state
+#define QTY 3 // quantity menu state
+#define LENGTH 4 // length of cut menu state
+#define PIERCE_LENGTH 5 // length from edges of each pierce
+#define PIERCE_QTY 6 // number of pierces
 
 short state = MAIN; // the current system state
 
@@ -34,6 +35,8 @@ int qty_current = 0; // number of sleeves already produced
 int cut_length = 25; // length of each piece
 int pierce_length = 5; // length of each piece
 int qty_pierce = 2; // length of each piece
+
+bool clear_current_qty = false;
 
 /**************************************************************************************/
 
@@ -63,6 +66,41 @@ void homeMenu() {
   String len_str = String("Length: ") + String(cut_length) + String("mm");
   printToScreen(len_str, 0, 1, true, false);
   lcd.noBlink();
+}
+
+void clearQtyMenu(const char button) {
+  // menu for clearing current qty
+  // @param: button, button that has been pressed.
+  switch(button) {
+    case UP:
+      clear_current_qty = true;
+      break;
+    case DOWN:
+      clear_current_qty = false;
+      break;
+    case SELECT:
+      if(clear_current_qty) qty_current = 0;
+
+      clear_current_qty = false;
+    
+      // return to home menu
+      menu_selected = false;
+      state = 0;
+      break;
+  }
+
+  String qty_str = String("Clear Qty");
+  printToScreen(qty_str, 0, 0, true, false);
+
+  if(clear_current_qty){
+    printToScreen("Yes", 0, 1, true, false);
+  } else {
+    printToScreen("No", 0, 1, true, false);
+  }
+  
+
+  // blink the cursor to indicate the menu has been selected
+  if (menu_selected) lcd.blink();
 }
 
 void speedMenu(const char button) {
@@ -232,6 +270,9 @@ void setMenu() {
       break;
     case PIERCE_QTY:
       pierceQtyMenu(NO_PRESS);
+      break;
+    case CLEAR_QTY:
+      clearQtyMenu(NO_PRESS);
       break;
   }
 }

@@ -38,6 +38,9 @@ void updateButton(const char button) {
         // update the number of pierces
         pierceQtyMenu(button);
         break;
+      case CLEAR_QTY:
+        clearQtyMenu(button);
+        break;
     }
     
   } else {
