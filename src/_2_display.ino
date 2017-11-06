@@ -1,4 +1,4 @@
-
+/*
 void printToScreen(const String str, const short col, const short row, const bool clear_row=true, const bool clear_screen=false) {
   // prints a string to the display in the defined cursor position
   // @param: str, string to print to screen
@@ -131,4 +131,4 @@ void setMenu() {
       break;      
   }
 }
-
+*/

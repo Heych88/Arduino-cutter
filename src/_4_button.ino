@@ -1,4 +1,4 @@
-
+/*
 void eStop() {
   // E-Stop is active so stop the machine
   motor_stop();
@@ -67,5 +67,5 @@ char pollButton() {
     if(!menu_selected || button == SELECT) button = NO_PRESS;
   }
 }
-
+*/
 

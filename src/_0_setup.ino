@@ -1,38 +1,50 @@
 #include <LiquidCrystal.h>
 #include <Stepper.h>
 
-// LCD globals and parameters
+
+int desired_speed = 60; // desired pwm rate of the motor
+
+
+void setup() {
+
+  // init motor parameters
+  pinMode(SDA, OUTPUT);
+}
+
+
+
+/*// LCD globals and parameters
 #define DISPLAY_ROWS 2
 #define DISPLAY_COLS 16
 
 /*char* speed_str = "Speed: %d%% ";
 char* qty_str = "Qty: %d/%d";
 char* total_str = "Total: %d ";
-char* length_str = "Length: %dmm ";*/
+char* length_str = "Length: %dmm ";*
 char blank_line[DISPLAY_COLS];
 
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(9,8,6,7,4,5); //(9, 8, 7, 6, 5, 4); // 8,9,4,5,6,7
 
-// motor globals and parameters
-const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution
-// initialize the stepper library on pins 8 through 11
-
 #define FORWARD LOW
 #define BACKWARD HIGH
 
+const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution
+// initialize the stepper library on pins 8 through 11
+//Stepper myStepper(stepsPerRevolution, 10, 11, 12, 13);
+
 /*volatile int encoderCount = 0; // number of encoder revolutions
 volatile unsigned long time_stamp = millis(); // time between speed calculations
-volatile float motor_speed = 0; // the current speed of the motor*/
+volatile float motor_speed = 0; // the current speed of the motor*
 int desired_speed = 60; // desired pwm rate of the motor
 int qty_desired = 0; // total number of sleeves required for production
 int qty_current = 0; // number of sleeves already produced
 int cut_length = 0; // length of each piece
 
-/*// drive wheel parameters
+/* drive wheel parameters
 const float wheel_diam = 61.0;  // diameter of the wheel
 const int ecode_ppr = 663; // number of encoder counts per revolution
-const float wheel_dist_ppr = wheel_diam * PI / ecode_ppr;*/
+const float wheel_dist_ppr = wheel_diam * PI / ecode_ppr;*
 
 // Push buttons and E-Stop
 #define E_STOP_BUT 1
@@ -106,5 +118,5 @@ void setup() {
 
   // check if E-stop is active
   if (digitalRead(E_STOP_BUT) == HIGH) e_stop_active = true;
-}
+}*/
 

@@ -1,38 +1,34 @@
+const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
+
 void motor_stop() {
   // stops the desired motor
-
-  //digitalWrite(SDA, LOW);
-  //digitalWrite(SCL, LOW); // Activating this will prevent the push buttons from working
-
-  //myStepper.setSpeed(0);
-  //myStepper.step(0);
+  digitalWrite(SDA, LOW);
 }
 
-int motor_run(const auto motor_dir) {
+int motor_run(const int steps) {
   // run the motor in the forward direction at the desired pwm
   // @param: use_motor_A, true => will use the motorA pins
   // @param: motor_dir, direction to run the motor 
   // return: the sensed motor voltage
-  unsigned int pwm_pin;
-  unsigned int sense_pin;
-  unsigned int pwm;
+  const int stepsPerRevolution = 200;
 
-  auto myStepper = new Stepper(stepsPerRevolution, 10, 11); //10, 11, 12, 13);
+  auto myStepper = new Stepper(stepsPerRevolution, 10, 11, 12, 13);
 
   // check that the pwm value is within the desired threshholds
-  if ((e_stop_active) || (!start_active) || (desired_speed <= 1)) {
+  if (false) { //(e_stop_active) || (!start_active) || (desired_speed <= 1)) {
     motor_stop();
   } else {
-    //digitalWrite(SDA, HIGH);
+    digitalWrite(SDA, HIGH);
 
     myStepper->setSpeed(desired_speed);
-    myStepper->step(2000);
+    myStepper->step(steps);
+    digitalWrite(SDA, LOW);
 
-    motor_stop();
+    //motor_stop();
 
     delete myStepper;
 
-    delay(10000);
+    delay(2000);
   }  
   
   return 0;

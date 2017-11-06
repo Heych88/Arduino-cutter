@@ -1,4 +1,4 @@
-
+/*
 void intEStop() {
 
   // E-stop has been pressed when the digital pin is high
@@ -30,4 +30,4 @@ void intButton() {
     button = NO_PRESS;
   }
 }
-
+*/
