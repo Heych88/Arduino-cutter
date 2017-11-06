@@ -29,7 +29,15 @@ void updateButton(const char button) {
       case LENGTH:
         // update the length of each piece
         lengthMenu(button);
-        break;      
+        break;
+      case PIERCE_LENGTH:
+        // update the length of each piece
+        pierceLengthMenu(button);
+        break;
+      case PIERCE_QTY:
+        // update the number of pierces
+        pierceQtyMenu(button);
+        break;
     }
     
   } else {
@@ -37,7 +45,7 @@ void updateButton(const char button) {
     switch(button) {
       case UP:
         state++;
-        if(state > LENGTH) state = LENGTH;
+        if(state > PIERCE_QTY) state = PIERCE_QTY;
         break;
       case DOWN:
         state--;
