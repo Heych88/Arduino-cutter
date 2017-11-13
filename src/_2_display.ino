@@ -59,6 +59,27 @@ void printToScreen(const String str, const short col, const short row, const boo
   lcd.print(str);
 }
 
+int updateValue(const char button, int value, const int minimum, const int maximum){
+  switch(button) {
+    case UP:
+      // up button pressed, increment the piece length
+      value += 1; 
+      break;
+    case DOWN:
+      // deincrement the piece length
+      value -= 1; 
+      break;
+    case SELECT:
+      // return to home menu
+      menu_selected = false;
+      state = 0;
+      break;
+  }
+
+   value = max(min(value, maximum), minimum);
+   return value;
+}
+
 void homeMenu() {
 
   String qty_str = "Qty: " + String(qty_current) + "/" + String(qty_desired);
@@ -98,7 +119,6 @@ void clearQtyMenu(const char button) {
     printToScreen("No", 0, 1, true, false);
   }
   
-
   // blink the cursor to indicate the menu has been selected
   if (menu_selected) lcd.blink();
 }
@@ -106,23 +126,8 @@ void clearQtyMenu(const char button) {
 void speedMenu(const char button) {
   // menu for setting the motor speed
   // @param: button, button that has been pressed.
-  switch(button) {
-    case UP:
-      // up button pressed, increment the desired quantity
-      desired_speed++;
-      if(desired_speed > 100) desired_speed = 100;
-      break;
-    case DOWN:
-      // deincrement the desired quantity
-      desired_speed--;
-      if(desired_speed < 0) desired_speed = 0;
-      break;
-    case SELECT:
-      // return to home menu
-      menu_selected = false;
-      state = 0;
-      break;
-  }
+
+  desired_speed = updateValue(button, desired_speed, 0, 100);
   
   String qty_str = String("Set Speed:");
   printToScreen(qty_str, 0, 0, true, false);
@@ -135,23 +140,8 @@ void speedMenu(const char button) {
 void qtyMenu(const char button) {
   // Quantity menu for setting the total number of pieces to cut
   // @param: button, button that has been pressed.
-  switch(button) {
-    case UP:
-      // up button pressed, increment the desired quantity
-      qty_desired++; 
-      if(qty_desired > 1000) qty_desired = 1000;
-      break;
-    case DOWN:
-      // deincrement the desired quantity
-      qty_desired--;
-      if(qty_desired < 0) qty_desired = 0;
-      break;
-    case SELECT:
-      // return to home menu
-      menu_selected = false;
-      state = 0;
-      break;
-  }
+  
+  qty_desired = updateValue(button, qty_desired, 0, 1000);
   
   String qty_str = String("Set quantity:");
   printToScreen(qty_str, 0, 0, true, false);
@@ -164,23 +154,8 @@ void qtyMenu(const char button) {
 void lengthMenu (const char button) {
   // Length menu for setting the length of each piece to cut
   // @param: button, button that has been pressed.
-  switch(button) {
-    case UP:
-      // up button pressed, increment the piece length
-      cut_length += 1; 
-      break;
-    case DOWN:
-      // deincrement the piece length
-      cut_length -= 1;
-      break;
-    case SELECT:
-      // return to home menu
-      menu_selected = false;
-      state = 0;
-      break;
-  }
-
-  cut_length = max(min(cut_length, 1000), 0);
+  
+  cut_length = updateValue(button, cut_length, 0, 1000);
   
   String qty_str = "Set length:";
   printToScreen(qty_str, 0, 0, true, false);
@@ -194,23 +169,8 @@ void lengthMenu (const char button) {
 void pierceLengthMenu (const char button) {
   // Length menu for setting the length of each piece to cut
   // @param: button, button that has been pressed.
-  switch(button) {
-    case UP:
-      // up button pressed, increment the piece length
-      pierce_length += 1; 
-      break;
-    case DOWN:
-      // deincrement the piece length
-      pierce_length -= 1; 
-      break;
-    case SELECT:
-      // return to home menu
-      menu_selected = false;
-      state = 0;
-      break;
-  }
-
-  pierce_length = max(min(pierce_length, cut_length - 5), 5);
+  
+  pierce_length = updateValue(button, pierce_length, cut_length - 5, 5);
 
   String pierce_str = "Set pierce dist:";
   printToScreen(pierce_str, 0, 0, true, false);
@@ -224,23 +184,8 @@ void pierceLengthMenu (const char button) {
 void pierceQtyMenu (const char button) {
   // Length menu for setting the length of each piece to cut
   // @param: button, button that has been pressed.
-  switch(button) {
-    case UP:
-      // up button pressed, increment the piece length
-      qty_pierce += 1; 
-      break;
-    case DOWN:
-      // deincrement the piece length
-      qty_pierce -= 1; 
-      break;
-    case SELECT:
-      // return to home menu
-      menu_selected = false;
-      state = 0;
-      break;
-  }
-
-  qty_pierce = max(min(qty_pierce, 2), 0);
+  
+  qty_pierce = updateValue(button, qty_pierce, 0, 2);
 
   String pierce_qty_str = "Set pierce qty:";
   printToScreen(pierce_qty_str, 0, 0, true, false);
