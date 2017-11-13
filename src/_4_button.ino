@@ -48,11 +48,9 @@ void updateButton(const char button) {
     switch(button) {
       case UP:
         state++;
-        if(state > PIERCE_QTY) state = PIERCE_QTY;
         break;
       case DOWN:
         state--;
-        if(state < 0) state = 0;
         break;
       case SELECT:
         menu_selected = true;
@@ -60,6 +58,8 @@ void updateButton(const char button) {
       case RUN:
         break;
     }
+    state = max(min(state, PIERCE_QTY), 0);
+    
     // update the display with the new menu
     if(button != NO_PRESS) setMenu();
   }
