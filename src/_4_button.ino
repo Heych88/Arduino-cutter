@@ -41,8 +41,14 @@ void updateButton(const char button) {
       case CLEAR_QTY:
         clearQtyMenu(button);
         break;
+      case PIERCE_DELAY:
+        // update the delay for activating the pierce solenoid
+        pierceDelayMenu(button);
+        break;
+      case CUT_DELAY:
+        cutDelayMenu(button);
+        break;
     }
-    
   } else {
     // no menu selected so scroll or select a menu
     switch(button) {
@@ -58,7 +64,7 @@ void updateButton(const char button) {
       case RUN:
         break;
     }
-    state = max(min(state, PIERCE_QTY), 0);
+    state = max(min(state, MENU_SIZE), 0);
     
     // update the display with the new menu
     if(button != NO_PRESS) setMenu();

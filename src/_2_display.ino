@@ -27,6 +27,10 @@ bool menu_selected = false;  // keeps track if the user has enter a menu previou
 #define LENGTH 4 // length of cut menu state
 #define PIERCE_LENGTH 5 // length from edges of each pierce
 #define PIERCE_QTY 6 // number of pierces
+#define PIERCE_DELAY 7 // length from edges of each pierce
+#define CUT_DELAY 8 // number of pierces
+
+#define MENU_SIZE 8  // Number of menus that can be displayed
 
 short state = MAIN; // the current system state
 
@@ -196,6 +200,36 @@ void pierceQtyMenu (const char button) {
   if (menu_selected) lcd.blink();
 }
 
+void pierceDelayMenu (const char button) {
+  // Length menu for setting the length of each piece to cut
+  // @param: button, button that has been pressed.
+  
+  pierce_delay = updateValue(button, pierce_delay, 50, 2000);
+
+  String pierce_qty_str = "Set pierce delay";
+  printToScreen(pierce_qty_str, 0, 0, true, false);
+  String value_str = String(pierce_delay);
+  printToScreen(value_str, 0, 1, true, false);
+
+  // blink the cursor to indicate the menu has been selected
+  if (menu_selected) lcd.blink();
+}
+
+void cutDelayMenu (const char button) {
+  // Length menu for setting the length of each piece to cut
+  // @param: button, button that has been pressed.
+  
+  cut_delay = updateValue(button, cut_delay, 50, 2000);
+
+  String pierce_qty_str = "Set cut delay";
+  printToScreen(pierce_qty_str, 0, 0, true, false);
+  String value_str = String(cut_delay);
+  printToScreen(value_str, 0, 1, true, false);
+
+  // blink the cursor to indicate the menu has been selected
+  if (menu_selected) lcd.blink();
+}
+
 void setMenu() {
   switch(state) {
     case MAIN:
@@ -218,6 +252,12 @@ void setMenu() {
       break;
     case CLEAR_QTY:
       clearQtyMenu(NO_PRESS);
+      break;
+    case PIERCE_DELAY:
+      pierceDelayMenu(NO_PRESS);
+      break;
+    case CUT_DELAY:
+      cutDelayMenu(NO_PRESS);
       break;
   }
 }
