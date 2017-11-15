@@ -13,14 +13,15 @@ int motor_run(const int steps) {
   auto myStepper = new Stepper(stepsPerRevolution, 10, 11, 12, 13);
 
   // check that the pwm value is within the desired threshholds
-  if ((e_stop_active) || (!start_active) || (desired_speed <= 1)) {
+  if ((e_stop_active) || (start_active == false) || (desired_speed <= 1)) {
     motor_stop();
+    start_active = false;
   } else {
     digitalWrite(SDA, HIGH);
 
     getSpeed();
   
-    myStepper->setSpeed(desired_speed);
+    myStepper->setSpeed(desired_speed+2);
     myStepper->step(steps);
     digitalWrite(SDA, LOW);
 

@@ -34,7 +34,7 @@ bool menu_selected = false;  // keeps track if the user has enter a menu previou
 
 short state = MAIN; // the current system state
 
-int qty_desired = 0; // total number of sleeves required for production
+int qty_desired = 200; // total number of sleeves required for production
 int qty_current = 0; // number of sleeves already produced
 int cut_length = 25; // length of each piece
 int pierce_length = 5; // length of each piece
@@ -141,9 +141,6 @@ void speedMenu(const char button) {
   String qty_str = String("Set Speed:");
   printToScreen(qty_str, 0, 0, true, false);
   printToScreen(String(desired_speed), 0, 1, true, false);
-
-  // blink the cursor to indicate the menu has been selected
-  if (menu_selected) lcd.blink();
 }
 
 void qtyMenu(const char button) {

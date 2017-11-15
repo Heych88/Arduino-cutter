@@ -6,7 +6,7 @@ int run_one_sleeve(){
     pierce_solenoid();
   
     if(qty_pierce == 2){
-      motor_run(cut_length - (qty_pierce * pierce_length));
+      motor_run(abs(cut_length - (2 * pierce_length)));
       pierce_solenoid();
       motor_run(pierce_length);
     } else {
@@ -28,6 +28,7 @@ void loop() {
     start_active = false;
     // E-Stop is active so stop the machine
     eStop();
+    state = MAIN;
     
     delay(1000);
     
@@ -35,7 +36,7 @@ void loop() {
     // check if the start button is active to run the system
     if (start_active) {
       while(qty_current < qty_desired){
-        if (e_stop_active) break;
+        if ((e_stop_active) || (start_active == false)) break;
         
         // Normal running program
         pollButton();

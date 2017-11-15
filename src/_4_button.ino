@@ -7,7 +7,6 @@ void eStop() {
 
   // dispaly E-Stop active
   printToScreen(estop_str, 0, 0, true, true);
-
 }
 
 void updateButton(const char button) {
@@ -59,7 +58,7 @@ void updateButton(const char button) {
         state--;
         break;
       case SELECT:
-        menu_selected = true;
+        if(state != SPEED) menu_selected = true;
         break;
       case RUN:
         break;
@@ -67,7 +66,7 @@ void updateButton(const char button) {
     state = max(min(state, MENU_SIZE), 0);
     
     // update the display with the new menu
-    if(button != NO_PRESS) setMenu();
+    if((button != NO_PRESS) || (state == SPEED)) setMenu();
   }
 }
 
@@ -97,7 +96,7 @@ char pollButton() {
       button = NO_PRESS;
     }
 
-    if (button != NO_PRESS) updateButton(button);
+    if ((button != NO_PRESS) || (state == SPEED)) updateButton(button);
 
     // Only accept held down push button inputs if a menu has been selected
     //if(!menu_selected || button == SELECT) button = NO_PRESS;
