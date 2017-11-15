@@ -24,6 +24,9 @@ char blank_line[DISPLAY_COLS];
 #define SOLENOID_CUT A4
 #define SOLENOID_PIERCE A5
 
+/************************************ Solenoids **************************************/
+#define TRIM_POT A0
+
 /*************************************************************************************/
 
 void setup() {

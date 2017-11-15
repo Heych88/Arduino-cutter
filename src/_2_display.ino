@@ -127,11 +127,16 @@ void clearQtyMenu(const char button) {
   if (menu_selected) lcd.blink();
 }
 
+int getSpeed(){
+  desired_speed = int(analogRead(TRIM_POT)/10);
+  desired_speed = updateValue(NO_PRESS, desired_speed, 0, 100);
+}
+
 void speedMenu(const char button) {
   // menu for setting the motor speed
   // @param: button, button that has been pressed.
 
-  desired_speed = updateValue(button, desired_speed, 0, 100);
+  getSpeed();
   
   String qty_str = String("Set Speed:");
   printToScreen(qty_str, 0, 0, true, false);
@@ -259,6 +264,6 @@ void setMenu() {
     case CUT_DELAY:
       cutDelayMenu(NO_PRESS);
       break;
-  }
+  }  
 }
 

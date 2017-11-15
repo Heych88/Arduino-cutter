@@ -18,6 +18,8 @@ int motor_run(const int steps) {
   } else {
     digitalWrite(SDA, HIGH);
 
+    getSpeed();
+  
     myStepper->setSpeed(desired_speed);
     myStepper->step(steps);
     digitalWrite(SDA, LOW);
