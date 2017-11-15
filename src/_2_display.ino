@@ -176,7 +176,7 @@ void pierceLengthMenu (const char button) {
   // Length menu for setting the length of each piece to cut
   // @param: button, button that has been pressed.
   
-  pierce_length = updateValue(button, pierce_length, cut_length - 5, 5);
+  pierce_length = updateValue(button, pierce_length, 5, cut_length - 5);
 
   String pierce_str = "Set pierce dist:";
   printToScreen(pierce_str, 0, 0, true, false);
