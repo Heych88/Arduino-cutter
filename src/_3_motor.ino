@@ -1,3 +1,4 @@
+int motor_loop_speed = getSpeed();
 
 void motor_stop() {
   // stops the stepper motor and puts it in a low power state
@@ -14,13 +15,11 @@ int motor_run(const int steps) {
   auto myStepper = new Stepper(stepsPerRevolution, 10, 11, 12, 13);
 
   // check that the pwm value is within the desired threshholds
-  if ((e_stop_active) || (start_active == false) || (getSpeed() <= 1)) {
+  if ((e_stop_active) || (start_active == false) || (motor_loop_speed <= 1)) {
     motor_stop();
   } else {
     digitalWrite(SDA, HIGH);
 
-    getSpeed();
-  
     myStepper->setSpeed(desired_speed+2);
     myStepper->step(steps);
     digitalWrite(SDA, LOW);

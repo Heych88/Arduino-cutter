@@ -35,14 +35,19 @@ void loop() {
   } else {
     // check if the start button is active to run the system
     if (start_active) {
-      while(qty_current < qty_desired){
-        if ((e_stop_active) || (start_active == false)) break;
-
-        state = MAIN;
-        
+      state = MAIN;
+            
+      while((qty_current < qty_desired) && (e_stop_active == false) && (start_active)) {
         // Normal running program
         pollButton();
-        run_one_sleeve();
+
+        motor_loop_speed = getSpeed();
+        if(motor_loop_speed > 1) {
+          run_one_sleeve();
+        } else {
+          start_active = false;
+        }
+
         homeMenu(); // update the display to show the current qty
         delay(100);
       }
