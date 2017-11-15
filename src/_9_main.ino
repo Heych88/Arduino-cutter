@@ -37,6 +37,8 @@ void loop() {
     if (start_active) {
       while(qty_current < qty_desired){
         if ((e_stop_active) || (start_active == false)) break;
+
+        state = MAIN;
         
         // Normal running program
         pollButton();
