@@ -1,19 +1,23 @@
-int run_one_sleeve(){
+int getDistanceCount(const int distance){
+  return int(abs(wheel_dist_per_step * distance) + 0.7);
+}
+
+int runOneSleeve(){
   // produces a single plastic sleeve
 
   if(qty_pierce > 0) {
-    motor_run(pierce_length);
+    motor_run(getDistanceCount(pierce_length));
     pierce_solenoid();
   
     if(qty_pierce == 2){
-      motor_run(abs(cut_length - (2 * pierce_length)));
+      motor_run(getDistanceCount(cut_length - (2 * pierce_length)));
       pierce_solenoid();
-      motor_run(pierce_length);
+      motor_run(getDistanceCount(pierce_length));
     } else {
-      motor_run(cut_length - pierce_length);
+      motor_run(getDistanceCount(cut_length - pierce_length));
     }
   }else{
-    motor_run(cut_length);
+    motor_run(getDistanceCount(cut_length));
   }
 
   cut_solenoid(); // cut sleeve to desired length
@@ -43,7 +47,7 @@ void loop() {
 
         motor_loop_speed = getSpeed();
         if(motor_loop_speed > 1) {
-          run_one_sleeve();
+          runOneSleeve();
         } else {
           start_active = false;
         }
