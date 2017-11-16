@@ -1,11 +1,6 @@
 /************************************** Motor *****************************************/
 int desired_speed = 60; // desired pwm rate of the motor
 
-/****************************** drive wheel parameters ********************************/
-const float wheel_diam = 61.0;  // diameter of the wheel
-const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
-const float wheel_dist_per_step = wheel_diam * PI / stepsPerRevolution; // distance travelled per step
-
 /*********************************** Push Button **************************************/
 // pushbutton char's for which button is pressed
 #define SELECT 'S' // select / return button
@@ -34,10 +29,10 @@ bool menu_selected = false;  // keeps track if the user has enter a menu previou
 
 short state = MAIN; // the current system state
 
-int qty_desired = 200; // total number of sleeves required for production
+int qty_desired = 1; // total number of sleeves required for production
 int qty_current = 0; // number of sleeves already produced
-int cut_length = 25; // length of each piece
-int pierce_length = 5; // length of each piece
+int cut_length = 50; // length of each piece
+int pierce_length = 7; // length of each piece
 int qty_pierce = 2; // length of each piece
 
 bool clear_current_qty = false;
@@ -161,7 +156,7 @@ void lengthMenu (const char button) {
   // Length menu for setting the length of each piece to cut
   // @param: button, button that has been pressed.
   
-  cut_length = updateValue(button, cut_length, 0, 1000);
+  cut_length = updateValue(button, cut_length, 1, 1000);
   
   String qty_str = "Set length:";
   printToScreen(qty_str, 0, 0, true, false);
