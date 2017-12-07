@@ -1,6 +1,3 @@
-int getDistanceCount(const int distance){
-  return int(abs(distance / wheel_dist_per_step) + 0.5);
-}
 
 int runOneSleeve(){
   // produces a single plastic sleeve

@@ -1,5 +1,7 @@
 /************************************** Motor *****************************************/
 int desired_speed = 60; // desired pwm rate of the motor
+float wheel_diam = 61.0;  // diameter of the wheel
+int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
 
 /*********************************** Push Button **************************************/
 // pushbutton char's for which button is pressed
@@ -24,8 +26,9 @@ bool menu_selected = false;  // keeps track if the user has enter a menu previou
 #define PIERCE_QTY 6 // number of pierces
 #define PIERCE_DELAY 7 // length from edges of each pierce
 #define CUT_DELAY 8 // number of pierces
+#define STEP_REV 9 // number of pierces
 
-#define MENU_SIZE 8  // Number of menus that can be displayed
+#define MENU_SIZE 9  // Number of menus that can be displayed
 
 short state = MAIN; // the current system state
 
@@ -227,6 +230,23 @@ void cutDelayMenu (const char button) {
   if (menu_selected) lcd.blink();
 }
 
+
+void stepPerRevMenu (const char button) {
+  // Length menu for setting the length of each piece to cut
+  // @param: button, button that has been pressed.
+  
+  stepsPerRevolution = updateValue(button, stepsPerRevolution, 1., 10000.);
+
+  String str = "Set steps/rev";
+  printToScreen(str, 0, 0, true, false);
+  String value_str = String(stepsPerRevolution);
+  printToScreen(value_str, 0, 1, true, false);
+
+  // blink the cursor to indicate the menu has been selected
+  if (menu_selected) lcd.blink();
+}
+
+
 void setMenu() {
   switch(state) {
     case MAIN:
@@ -255,6 +275,9 @@ void setMenu() {
       break;
     case CUT_DELAY:
       cutDelayMenu(NO_PRESS);
+      break;
+    case STEP_REV:
+      stepPerRevMenu(NO_PRESS);
       break;
   }  
 }

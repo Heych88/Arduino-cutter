@@ -47,6 +47,9 @@ void updateButton(const char button) {
       case CUT_DELAY:
         cutDelayMenu(button);
         break;
+      case STEP_REV:
+        stepPerRevMenu(button);
+        break;
     }
   } else {
     // no menu selected so scroll or select a menu

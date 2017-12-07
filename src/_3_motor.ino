@@ -1,11 +1,19 @@
 int motor_loop_speed = getSpeed();
 
-/****************************** drive wheel parameters ********************************/
-const float wheel_diam = 61.0;  // diameter of the wheel
-const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
-const float wheel_dist_per_step = (wheel_diam * PI) / stepsPerRevolution; // distance travelled per step
-
-/**************************************************************************************/
+/*
+ * Calculates the travel distance of the wheel per step of the stepper 
+ * 
+ * Args:
+ *    distance: The required distance for the wheel to travel        
+ *    
+ * Returns:
+ *    The step counts required to travel the distance
+ */
+int getDistanceCount(const int distance){
+  
+  float wheel_dist_per_step = (wheel_diam * PI) / stepsPerRevolution; // distance travelled per step
+  return int(abs(distance / wheel_dist_per_step) + 0.5);
+}
 
 void motor_stop() {
   // stops the stepper motor and puts it in a low power state
