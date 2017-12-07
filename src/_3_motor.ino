@@ -1,9 +1,9 @@
 int motor_loop_speed = getSpeed();
 
 /****************************** drive wheel parameters ********************************/
-const float wheel_diam = 60.0;  // diameter of the wheel
+const float wheel_diam = 61.0;  // diameter of the wheel
 const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
-const float wheel_dist_per_step = stepsPerRevolution / (wheel_diam * PI); // distance travelled per step
+const float wheel_dist_per_step = (wheel_diam * PI) / stepsPerRevolution; // distance travelled per step
 
 /**************************************************************************************/
 

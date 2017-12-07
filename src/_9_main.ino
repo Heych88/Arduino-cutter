@@ -1,5 +1,5 @@
 int getDistanceCount(const int distance){
-  return int(abs(wheel_dist_per_step * distance) + 0.7);
+  return int(abs(distance / wheel_dist_per_step) + 0.5);
 }
 
 int runOneSleeve(){
