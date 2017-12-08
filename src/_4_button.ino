@@ -50,6 +50,9 @@ void updateButton(const char button) {
       case STEP_REV:
         stepPerRevMenu(button);
         break;
+      case WHEEL_DIAM:
+        wheelDiamMenu(button);
+        break;
     }
   } else {
     // no menu selected so scroll or select a menu

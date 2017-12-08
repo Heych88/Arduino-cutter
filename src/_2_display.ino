@@ -26,9 +26,10 @@ bool menu_selected = false;  // keeps track if the user has enter a menu previou
 #define PIERCE_QTY 6 // number of pierces
 #define PIERCE_DELAY 7 // length from edges of each pierce
 #define CUT_DELAY 8 // number of pierces
-#define STEP_REV 9 // number of pierces
+#define STEP_REV 9 // steps per stepper motor revolution menu
+#define WHEEL_DIAM 10 // wheel diameter setting menu
 
-#define MENU_SIZE 9  // Number of menus that can be displayed
+#define MENU_SIZE WHEEL_DIAM  // Number of menus that can be displayed
 
 short state = MAIN; // the current system state
 
@@ -246,6 +247,25 @@ void stepPerRevMenu (const char button) {
   if (menu_selected) lcd.blink();
 }
 
+/*
+ * Adjust the wheel diameter used to drive the system
+ * 
+ * Args:
+ *    button: button that has been pressed.
+ *    
+ */
+void wheelDiamMenu (const char button) {
+  wheel_diam = updateValue(button, wheel_diam, 1., 10000.);
+
+  String str = "Set steps/rev";
+  printToScreen(str, 0, 0, true, false);
+  String value_str = String(wheel_diam);
+  printToScreen(value_str, 0, 1, true, false);
+
+  // blink the cursor to indicate the menu has been selected
+  if (menu_selected) lcd.blink();
+}
+
 
 void setMenu() {
   switch(state) {
@@ -278,6 +298,9 @@ void setMenu() {
       break;
     case STEP_REV:
       stepPerRevMenu(NO_PRESS);
+      break;
+    case WHEEL_DIAM:
+      wheelDiamMenu(NO_PRESS);
       break;
   }  
 }
