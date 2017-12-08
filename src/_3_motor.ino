@@ -1,3 +1,5 @@
+
+// init here but we only update in the main loop. This prevents changing speeding during run time.
 int motor_loop_speed = getSpeed();
 
 /*
@@ -15,18 +17,28 @@ int getDistanceCount(const int distance){
   return int(abs(distance / wheel_dist_per_step) + 0.5);
 }
 
+
+/*
+ * Stops the stepper motor and deactivates it to prevent current draw during non use.
+ * 
+ * Args:
+ *    None
+ *    
+ */
 void motor_stop() {
-  // stops the stepper motor and puts it in a low power state
   start_active = false;
   digitalWrite(SDA, LOW);
 }
 
-int motor_run(const int steps) {
-  // run the motor in the forward direction at the desired pwm
-  // @param: steps, number of steps to step the stepper motor
-  // return: zero on completion
-  const int stepsPerRevolution = 200;
 
+/*
+ * Initalises and runs the stepper motor to the desired distance.
+ * 
+ * Args:
+ *    steps: number of steps to mover the motor.
+ *    
+ */
+int motor_run(const int steps) {
   auto myStepper = new Stepper(stepsPerRevolution, 10, 11, 12, 13);
 
   // check that the pwm value is within the desired threshholds

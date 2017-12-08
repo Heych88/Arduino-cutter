@@ -43,6 +43,17 @@ bool clear_current_qty = false;
 
 /**************************************************************************************/
 
+/*
+ * Prints strings to the LCD display
+ * 
+ * Args:
+ *    str         : String to be displayed.
+ *    col         : column number to start displaying the string.
+ *    row         : row number to start displaying the string.
+ *    clear_row   : true => Clears only the used row, false = > Prints string over previous row data.
+ *    clear_screen: true => Clears all previous displayed data, false = > Prints string over previous displayed data.
+ * 
+ */
 void printToScreen(const String str, const short col, const short row, const bool clear_row=true, const bool clear_screen=false) {
   // prints a string to the display in the defined cursor position
   // @param: str, string to print to screen
@@ -62,6 +73,19 @@ void printToScreen(const String str, const short col, const short row, const boo
   lcd.print(str);
 }
 
+/*
+ * Updates the menus selected value with the last button pushed functionality.
+ * 
+ * Args:
+ *    button : button that has been pressed.
+ *    value  : Current value to be adjusted.
+ *    minimum: Minimum allowed number of value.
+ *    maximum: Maximum allowed number of value.
+ * 
+ * Returns:
+ *    The updated value.
+ *    
+ */
 int updateValue(const char button, int value, const int minimum, const int maximum){
   switch(button) {
     case UP:
@@ -83,6 +107,14 @@ int updateValue(const char button, int value, const int minimum, const int maxim
    return value;
 }
 
+
+/*
+ * Displays the main screen during normal operation.
+ * 
+ * Args:
+ *    None.
+ *    
+ */
 void homeMenu() {
 
   String qty_str = "Qty: " + String(qty_current) + "/" + String(qty_desired);
@@ -92,6 +124,14 @@ void homeMenu() {
   lcd.noBlink();
 }
 
+
+/*
+ * Resets the number of sleeves already produced.
+ * 
+ * Args:
+ *    button: button that has been pressed.
+ *    
+ */
 void clearQtyMenu(const char button) {
   // menu for clearing current qty
   // @param: button, button that has been pressed.
@@ -126,11 +166,30 @@ void clearQtyMenu(const char button) {
   if (menu_selected) lcd.blink();
 }
 
+
+/*
+ * Reads the speed potentiometer and calculates the speed equivalent.
+ * 
+ * Args:
+ *    None.
+ * 
+ * Returns:
+ *    The calculated motor speed.
+ *    
+ */
 int getSpeed(){
   desired_speed = int(analogRead(TRIM_POT)/10);
   desired_speed = updateValue(NO_PRESS, desired_speed, 0, 100);
 }
 
+
+/*
+ * Adjusts the motor run speed.
+ * 
+ * Args:
+ *    button: button that has been pressed.
+ *    
+ */
 void speedMenu(const char button) {
   // menu for setting the motor speed
   // @param: button, button that has been pressed.
@@ -142,6 +201,14 @@ void speedMenu(const char button) {
   printToScreen(String(desired_speed), 0, 1, true, false);
 }
 
+
+/*
+ * Adjust the number of sleeves to cut.
+ * 
+ * Args:
+ *    button: button that has been pressed.
+ *    
+ */
 void qtyMenu(const char button) {
   // Quantity menu for setting the total number of pieces to cut
   // @param: button, button that has been pressed.
@@ -156,6 +223,14 @@ void qtyMenu(const char button) {
   if (menu_selected) lcd.blink();
 }
 
+
+/*
+ * Adjust the on length from each sleeve.
+ * 
+ * Args:
+ *    button: button that has been pressed.
+ *    
+ */
 void lengthMenu (const char button) {
   // Length menu for setting the length of each piece to cut
   // @param: button, button that has been pressed.
@@ -171,10 +246,15 @@ void lengthMenu (const char button) {
   if (menu_selected) lcd.blink();
 }
 
+
+/*
+ * Adjust the on length from each end of the sleeve of the pierces
+ * 
+ * Args:
+ *    button: button that has been pressed.
+ *    
+ */
 void pierceLengthMenu (const char button) {
-  // Length menu for setting the length of each piece to cut
-  // @param: button, button that has been pressed.
-  
   pierce_length = updateValue(button, pierce_length, 5, cut_length - 5);
 
   String pierce_str = "Set pierce dist:";
@@ -186,10 +266,15 @@ void pierceLengthMenu (const char button) {
   if (menu_selected) lcd.blink();
 }
 
+
+/*
+ * Adjust the number of the pierce per sleeve.
+ * 
+ * Args:
+ *    button: button that has been pressed.
+ *    
+ */
 void pierceQtyMenu (const char button) {
-  // Length menu for setting the length of each piece to cut
-  // @param: button, button that has been pressed.
-  
   qty_pierce = updateValue(button, qty_pierce, 0, 2);
 
   String pierce_qty_str = "Set pierce qty:";
@@ -201,10 +286,15 @@ void pierceQtyMenu (const char button) {
   if (menu_selected) lcd.blink();
 }
 
+
+/*
+ * Adjust the on delay of the pierce solenoid valve
+ * 
+ * Args:
+ *    button: button that has been pressed.
+ *    
+ */
 void pierceDelayMenu (const char button) {
-  // Length menu for setting the length of each piece to cut
-  // @param: button, button that has been pressed.
-  
   pierce_delay = updateValue(button, pierce_delay, 50, 2000);
 
   String pierce_qty_str = "Set pierce delay";
@@ -216,10 +306,15 @@ void pierceDelayMenu (const char button) {
   if (menu_selected) lcd.blink();
 }
 
+
+/*
+ * Adjust the on delay of the cut solenoid valve
+ * 
+ * Args:
+ *    button: button that has been pressed.
+ *    
+ */
 void cutDelayMenu (const char button) {
-  // Length menu for setting the length of each piece to cut
-  // @param: button, button that has been pressed.
-  
   cut_delay = updateValue(button, cut_delay, 50, 2000);
 
   String pierce_qty_str = "Set cut delay";
@@ -232,10 +327,14 @@ void cutDelayMenu (const char button) {
 }
 
 
+/*
+ * Adjust the steps per revolution of the drive stepper motor.
+ * 
+ * Args:
+ *    button: button that has been pressed.
+ *    
+ */
 void stepPerRevMenu (const char button) {
-  // Length menu for setting the length of each piece to cut
-  // @param: button, button that has been pressed.
-  
   stepsPerRevolution = updateValue(button, stepsPerRevolution, 1., 10000.);
 
   String str = "Set steps/rev";
@@ -247,6 +346,7 @@ void stepPerRevMenu (const char button) {
   if (menu_selected) lcd.blink();
 }
 
+
 /*
  * Adjust the wheel diameter used to drive the system
  * 
@@ -257,7 +357,7 @@ void stepPerRevMenu (const char button) {
 void wheelDiamMenu (const char button) {
   wheel_diam = updateValue(button, wheel_diam, 1., 10000.);
 
-  String str = "Set steps/rev";
+  String str = "Set diameter";
   printToScreen(str, 0, 0, true, false);
   String value_str = String(wheel_diam);
   printToScreen(value_str, 0, 1, true, false);

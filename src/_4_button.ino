@@ -1,6 +1,14 @@
 volatile int pb_debounce = 0;  // push button debounce time
 char* estop_str = "E-STOP";
 
+
+/*
+ * Stops the program and inits all E-stop functions when the E-stop is active.
+ * 
+ * Args:
+ *    None
+ *    
+ */
 void eStop() {
   // E-Stop is active so stop the machine
   motor_stop();
@@ -9,6 +17,14 @@ void eStop() {
   printToScreen(estop_str, 0, 0, true, true);
 }
 
+
+/*
+ * Updates the Finite State Machine with the current pushed button. 
+ * 
+ * Args:
+ *    button: button that has been pressed.
+ *    
+ */
 void updateButton(const char button) {
 
   if (menu_selected) {
@@ -76,6 +92,14 @@ void updateButton(const char button) {
   }
 }
 
+
+/*
+ * Polls the push buttons with de-bounce. 
+ * 
+ * Args:
+ *    None
+ *    
+ */
 char pollButton() {
 
   // check if E-stop is active

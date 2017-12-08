@@ -1,4 +1,11 @@
 
+/*
+ * Function to produce one sleeve with the desired sleeve settings. 
+ * 
+ * Args:
+ *    None
+ *    
+ */
 int runOneSleeve(){
   // produces a single plastic sleeve
 
@@ -22,7 +29,10 @@ int runOneSleeve(){
   qty_current += 1;
 }
 
-// main program loop 
+/* 
+ * main program loop 
+ * 
+ */
 void loop() {
   
   if (e_stop_active) {
