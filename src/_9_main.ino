@@ -6,17 +6,16 @@
  *    None
  *    
  */
-int runOneSleeve(){
-  // produces a single plastic sleeve
-
+void runOneSleeve(){
+  
   if(qty_pierce > 0) {
-    motor_run(getDistanceCount(pierce_length));
+    motor_run(getDistanceCount(pierce_length) + 1);
     pierce_solenoid();
   
     if(qty_pierce == 2){
       motor_run(getDistanceCount(cut_length - (2 * pierce_length)));
       pierce_solenoid();
-      motor_run(getDistanceCount(pierce_length));
+      motor_run(getDistanceCount(pierce_length) + 1);
     } else {
       motor_run(getDistanceCount(cut_length - pierce_length));
     }
@@ -52,8 +51,8 @@ void loop() {
         // Normal running program
         pollButton();
 
-        motor_loop_speed = getSpeed();
-        if(motor_loop_speed > 1) {
+        getSpeed(); // update the desired_speed
+        if(desired_speed > 1) {
           runOneSleeve();
         } else {
           start_active = false;

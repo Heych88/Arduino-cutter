@@ -1,7 +1,4 @@
 
-// init here but we only update in the main loop. This prevents changing speeding during run time.
-int motor_loop_speed = getSpeed();
-
 /*
  * Calculates the travel distance of the wheel per step of the stepper 
  * 
@@ -38,14 +35,14 @@ void motor_stop() {
  *    steps: number of steps to mover the motor.
  *    
  */
-int motor_run(const int steps) {
-  auto myStepper = new Stepper(stepsPerRevolution, 10, 11, 12, 13);
-
+void motor_run(const int steps) {
   // check that the pwm value is within the desired threshholds
-  if ((e_stop_active) || (start_active == false) || (motor_loop_speed <= 1)) {
+  if ((e_stop_active) || (start_active == false) || (desired_speed <= 1)) {
     motor_stop();
   } else {
-    digitalWrite(SDA, HIGH);
+    auto myStepper = new Stepper(stepsPerRevolution, 10, 11, 12, 13);
+    
+    digitalWrite(SDA, HIGH); // Enable the motor driver
 
     myStepper->setSpeed(desired_speed+2);
     myStepper->step(steps);
@@ -53,7 +50,5 @@ int motor_run(const int steps) {
 
     delete myStepper;
   }  
-  
-  return 0;
 }
 
