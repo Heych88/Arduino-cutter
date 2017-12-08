@@ -4,15 +4,28 @@
  * Stores values read from analog input 0 into the EEPROM.
  * These values will stay in the EEPROM when the board is
  * turned off and may be retrieved later by another sketch.
+ * 
+ * Modified from the Arduino example eeprom_write.ino and 
+ * arduino playground
+ * https://playground.arduino.cc/Code/EEPROMReadWriteLong
  */
 
 #include <EEPROM.h>
 
-/** the current address in the EEPROM (i.e. which byte we're going to write to next) **/
+#define CUT_DELAY_ADDR 0
+#define PIERCE_DELAY_ADDR 2
+#define QTY_DESIRED_ADDR 4
+#define CUT_LENGTH_ADDR 6
+#define PIERCE_LENGTH_ADDR 8
+#define PIERCE_QTY_ADDR 10
+#define WHEEL_DIAM_ADDR 12
+#define STEP_REV_ADDR 14
+
+
 int addr = 0;
 int int_size = sizeof(int);
 
-const int cut_delay = 1234;  // delay between solenoid cutting and activation
+const int cut_delay = 200;  // delay between solenoid cutting and activation
 const int pierce_delay = 200;
 
 const int qty_desired = 1; // total number of sleeves required for production
@@ -24,9 +37,14 @@ const int wheel_diam = 61.0;  // diameter of the wheel
 const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
 
 
-//This function will write a 4 byte (32bit) long to the eeprom at
-//the specified address to address + sizeof(int)
-void EEPROMWritelong(int address, int value)
+/*
+ * Splits int (16bit) values into bytes and stores them into 8bit EEPROM starting at the desired address.
+ * 
+ * Args:
+ *    address: EEPROM address to store the values
+ *    value: integer value to store at the address
+ */
+void eepromWrite(int address, int value)
 {
   //Decomposition from a long to 4 bytes by using bitshift.
   //One = Most significant -> Four = Least significant byte
@@ -51,7 +69,6 @@ void setup() {
     ; // wait for serial port to connect. Needed for native USB port only
   }
   
-  /** Empty setup. **/
   // initialize the LED pin as an output.
   pinMode(13, OUTPUT);
 
@@ -60,14 +77,14 @@ void setup() {
     EEPROM.write(i, 0);
   }
   
-  EEPROMWritelong(addr, cut_delay);
-  EEPROMWritelong(addr + int_size, pierce_delay);
-  EEPROMWritelong(addr + 2 * int_size, qty_desired);
-  EEPROMWritelong(addr + 3 * int_size, cut_length);
-  EEPROMWritelong(addr + 4 * int_size, pierce_length);
-  EEPROMWritelong(addr + 5 * int_size, qty_pierce);
-  EEPROMWritelong(addr + 6 * int_size, wheel_diam);
-  EEPROMWritelong(addr + 7 * int_size, stepsPerRevolution);
+  eepromWrite(CUT_DELAY_ADDR, cut_delay);
+  eepromWrite(PIERCE_DELAY_ADDR, pierce_delay);
+  eepromWrite(QTY_DESIRED_ADDR, qty_desired);
+  eepromWrite(CUT_LENGTH_ADDR, cut_length);
+  eepromWrite(PIERCE_LENGTH_ADDR, pierce_length);
+  eepromWrite(PIERCE_QTY_ADDR, qty_pierce);
+  eepromWrite(WHEEL_DIAM_ADDR, wheel_diam);
+  eepromWrite(STEP_REV_ADDR, stepsPerRevolution);
 
   // turn the LED on when we're done
   digitalWrite(13, HIGH);
