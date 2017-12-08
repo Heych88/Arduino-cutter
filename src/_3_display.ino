@@ -1,7 +1,7 @@
 /************************************** Motor *****************************************/
 int desired_speed = 60; // desired pwm rate of the motor
-float wheel_diam = 61.0;  // diameter of the wheel
-int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
+//float wheel_diam = 61.0;  // diameter of the wheel
+//int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
 
 /*********************************** Push Button **************************************/
 // pushbutton char's for which button is pressed
@@ -33,11 +33,11 @@ bool menu_selected = false;  // keeps track if the user has enter a menu previou
 
 short state = MAIN; // the current system state
 
-int qty_desired = 1; // total number of sleeves required for production
+//int qty_desired = 1; // total number of sleeves required for production
 int qty_current = 0; // number of sleeves already produced
-int cut_length = 50; // length of each piece
-int pierce_length = 7; // length of each piece
-int qty_pierce = 2; // length of each piece
+//int cut_length = 50; // length of each piece
+//int pierce_length = 7; // length of each piece
+//int qty_pierce = 2; // length of each piece
 
 bool clear_current_qty = false;
 

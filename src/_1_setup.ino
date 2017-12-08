@@ -60,6 +60,9 @@ void setup() {
     blank_line[i] = ' ';
   }
 
+  // Load the saved eeprom values
+  getEepromValues();
+
   // check if E-stop is active
   if (digitalRead(E_STOP_BUT) == HIGH) e_stop_active = true;
 }
