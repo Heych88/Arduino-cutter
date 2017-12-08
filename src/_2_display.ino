@@ -173,11 +173,8 @@ void clearQtyMenu(const char button) {
  * Args:
  *    None.
  * 
- * Returns:
- *    The calculated motor speed.
- *    
  */
-int getSpeed(){
+void getSpeed(){
   desired_speed = int(analogRead(TRIM_POT)/10);
   desired_speed = updateValue(NO_PRESS, desired_speed, 0, 100);
 }

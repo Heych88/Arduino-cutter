@@ -1,3 +1,4 @@
+
 volatile int pb_debounce = 0;  // push button debounce time
 char* estop_str = "E-STOP";
 
@@ -100,7 +101,7 @@ void updateButton(const char button) {
  *    None
  *    
  */
-char pollButton() {
+void pollButton() {
 
   // check if E-stop is active
   if (digitalRead(E_STOP_BUT) == HIGH) e_stop_active = true;

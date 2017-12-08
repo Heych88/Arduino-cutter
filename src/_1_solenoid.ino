@@ -1,3 +1,4 @@
+
 #define ACTIVE_SOL HIGH
 
 int cut_delay = 200;  // delay between solenoid cutting and activation
