@@ -1,7 +1,5 @@
 /************************************** Motor *****************************************/
 int desired_speed = 60; // desired pwm rate of the motor
-//float wheel_diam = 61.0;  // diameter of the wheel
-//int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
 
 /*********************************** Push Button **************************************/
 // pushbutton char's for which button is pressed
@@ -32,13 +30,7 @@ bool menu_selected = false;  // keeps track if the user has enter a menu previou
 #define MENU_SIZE WHEEL_DIAM  // Number of menus that can be displayed
 
 short state = MAIN; // the current system state
-
-//int qty_desired = 1; // total number of sleeves required for production
 int qty_current = 0; // number of sleeves already produced
-//int cut_length = 50; // length of each piece
-//int pierce_length = 7; // length of each piece
-//int qty_pierce = 2; // length of each piece
-
 bool clear_current_qty = false;
 
 /**************************************************************************************/
@@ -188,8 +180,6 @@ void getSpeed(){
  *    
  */
 void speedMenu(const char button) {
-  // menu for setting the motor speed
-  // @param: button, button that has been pressed.
 
   getSpeed();
   
@@ -207,10 +197,10 @@ void speedMenu(const char button) {
  *    
  */
 void qtyMenu(const char button) {
-  // Quantity menu for setting the total number of pieces to cut
-  // @param: button, button that has been pressed.
   
   qty_desired = updateValue(button, qty_desired, 0, 1000);
+
+  eepromWrite(QTY_DESIRED_ADDR, qty_desired);  // update the eeprom with the latest value
   
   String qty_str = String("Set quantity:");
   printToScreen(qty_str, 0, 0, true, false);
@@ -229,10 +219,10 @@ void qtyMenu(const char button) {
  *    
  */
 void lengthMenu (const char button) {
-  // Length menu for setting the length of each piece to cut
-  // @param: button, button that has been pressed.
   
   cut_length = updateValue(button, cut_length, 1, 1000);
+
+  eepromWrite(CUT_LENGTH_ADDR, cut_length);  // update the eeprom with the latest value
   
   String qty_str = "Set length:";
   printToScreen(qty_str, 0, 0, true, false);
@@ -254,6 +244,8 @@ void lengthMenu (const char button) {
 void pierceLengthMenu (const char button) {
   pierce_length = updateValue(button, pierce_length, 5, cut_length - 5);
 
+  eepromWrite(PIERCE_LENGTH_ADDR, pierce_length);  // update the eeprom with the latest value
+
   String pierce_str = "Set pierce dist:";
   printToScreen(pierce_str, 0, 0, true, false);
   String value_str = String(pierce_length) + "mm";
@@ -273,6 +265,8 @@ void pierceLengthMenu (const char button) {
  */
 void pierceQtyMenu (const char button) {
   qty_pierce = updateValue(button, qty_pierce, 0, 2);
+
+  eepromWrite(PIERCE_QTY_ADDR, qty_pierce);  // update the eeprom with the latest value
 
   String pierce_qty_str = "Set pierce qty:";
   printToScreen(pierce_qty_str, 0, 0, true, false);
@@ -294,6 +288,8 @@ void pierceQtyMenu (const char button) {
 void pierceDelayMenu (const char button) {
   pierce_delay = updateValue(button, pierce_delay, 50, 2000);
 
+  eepromWrite(PIERCE_DELAY_ADDR, pierce_delay);  // update the eeprom with the latest value
+
   String pierce_qty_str = "Set pierce delay";
   printToScreen(pierce_qty_str, 0, 0, true, false);
   String value_str = String(pierce_delay);
@@ -313,6 +309,8 @@ void pierceDelayMenu (const char button) {
  */
 void cutDelayMenu (const char button) {
   cut_delay = updateValue(button, cut_delay, 50, 2000);
+  
+  eepromWrite(CUT_DELAY_ADDR, cut_delay);  // update the eeprom with the latest value
 
   String pierce_qty_str = "Set cut delay";
   printToScreen(pierce_qty_str, 0, 0, true, false);
@@ -334,6 +332,8 @@ void cutDelayMenu (const char button) {
 void stepPerRevMenu (const char button) {
   stepsPerRevolution = updateValue(button, stepsPerRevolution, 1., 10000.);
 
+  eepromWrite(STEP_REV_ADDR, stepsPerRevolution);  // update the eeprom with the latest value
+
   String str = "Set steps/rev";
   printToScreen(str, 0, 0, true, false);
   String value_str = String(stepsPerRevolution);
@@ -353,6 +353,8 @@ void stepPerRevMenu (const char button) {
  */
 void wheelDiamMenu (const char button) {
   wheel_diam = updateValue(button, wheel_diam, 1., 10000.);
+
+  eepromWrite(WHEEL_DIAM_ADDR, wheel_diam);  // update the eeprom with the latest value
 
   String str = "Set diameter";
   printToScreen(str, 0, 0, true, false);

@@ -1,9 +1,6 @@
 
 #define ACTIVE_SOL HIGH
 
-//int cut_delay = 200;  // delay between solenoid cutting and activation
-//int pierce_delay = 200;
-
 volatile bool start_active = false; // tracks the state of if the system is running
 
 
