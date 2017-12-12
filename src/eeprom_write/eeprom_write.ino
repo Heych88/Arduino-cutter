@@ -35,7 +35,7 @@ const int pierce_length = 7; // length of each piece
 const int qty_pierce = 3; // length of each piece
 
 const int wheel_diam = 61.0;  // diameter of the wheel
-const int steps_per_revolution = 200;  // change this to fit the number of steps per revolution for your motor
+const int steps_per_revolution = 239;  // change this to fit the number of steps per revolution for your motor
 const int pierce_sol_offset = 0;  // Offset between the cutting solenoid and the pierce solenoid.
                             // Pierce solenoid my be placed before the cut solenoid in the direction of travel.
 
@@ -56,21 +56,10 @@ void eepromWrite(int address, int value)
   //Write the 4 bytes into the eeprom memory.
   EEPROM.write(address, one);
   EEPROM.write(address + 1, two);
-
-  Serial.print(address);
-  Serial.print("\t");
-  Serial.print(value);
-  Serial.println();
 }
 
 
 void setup() {
-// initialize serial and wait for port to open:
-  Serial.begin(9600);
-  while (!Serial) {
-    ; // wait for serial port to connect. Needed for native USB port only
-  }
-  
   // initialize the LED pin as an output.
   pinMode(13, OUTPUT);
 
