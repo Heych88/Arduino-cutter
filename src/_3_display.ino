@@ -293,7 +293,7 @@ void pierceDelayMenu (const char button) {
 
   String pierce_qty_str = "Set pierce delay";
   printToScreen(pierce_qty_str, 0, 0, true, false);
-  String value_str = String(pierce_delay);
+  String value_str = String(pierce_delay) + "ms";
   printToScreen(value_str, 0, 1, true, false);
 
   // blink the cursor to indicate the menu has been selected
@@ -315,7 +315,7 @@ void cutDelayMenu (const char button) {
 
   String pierce_qty_str = "Set cut delay";
   printToScreen(pierce_qty_str, 0, 0, true, false);
-  String value_str = String(cut_delay);
+  String value_str = String(cut_delay) + "ms";
   printToScreen(value_str, 0, 1, true, false);
 
   // blink the cursor to indicate the menu has been selected
@@ -359,7 +359,7 @@ void wheelDiamMenu (const char button) {
 
   String str = "Set diameter";
   printToScreen(str, 0, 0, true, false);
-  String value_str = String(wheel_diam);
+  String value_str = String(wheel_diam) + "mm";
   printToScreen(value_str, 0, 1, true, false);
 
   // blink the cursor to indicate the menu has been selected
@@ -381,7 +381,7 @@ void pierceSolOffsetMenu (const char button) {
 
   String str = "Pier sol offset";
   printToScreen(str, 0, 0, true, false);
-  String value_str = String(pierce_sol_offset);
+  String value_str = String(pierce_sol_offset) + "mm";
   printToScreen(value_str, 0, 1, true, false);
 
   // blink the cursor to indicate the menu has been selected
