@@ -8,6 +8,7 @@
 #define PIERCE_QTY_ADDR 10
 #define WHEEL_DIAM_ADDR 12
 #define STEP_REV_ADDR 14
+#define SOL_OFFSET_ADDR 16
 
 int cut_delay = 1234;  // delay between solenoid cutting and activation
 int pierce_delay = 200;
@@ -19,7 +20,8 @@ int qty_pierce = 3; // length of each piece
 
 int wheel_diam = 61.0;  // diameter of the wheel
 int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
-
+int pierce_sol_offset = 0;  // Offset between the cutting solenoid and the pierce solenoid.
+                            // Pierce solenoid my be placed before the cut solenoid in the direction of travel.
 
 /*
  * Reads EEPROM bytes and converts them into 16bit ints.
@@ -75,4 +77,5 @@ void getEepromValues() {
   qty_pierce = eepromRead(PIERCE_QTY_ADDR);
   wheel_diam = eepromRead(WHEEL_DIAM_ADDR);
   stepsPerRevolution = eepromRead(STEP_REV_ADDR);
+  pierce_sol_offset = eepromRead(SOL_OFFSET_ADDR);
 }

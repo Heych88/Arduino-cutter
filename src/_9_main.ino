@@ -9,15 +9,15 @@
 void runOneSleeve(){
   
   if(qty_pierce > 0) {
-    motor_run(getDistanceCount(pierce_length) + 1);
+    motor_run(getDistanceCount(pierce_length - pierce_sol_offset) + 1);
     pierce_solenoid();
   
     if(qty_pierce == 2){
       motor_run(getDistanceCount(cut_length - (2 * pierce_length)));
       pierce_solenoid();
-      motor_run(getDistanceCount(pierce_length) + 1);
+      motor_run(getDistanceCount(pierce_length + pierce_sol_offset) + 1);
     } else {
-      motor_run(getDistanceCount(cut_length - pierce_length));
+      motor_run(getDistanceCount(cut_length - pierce_length + pierce_sol_offset));
     }
   }else{
     motor_run(getDistanceCount(cut_length));

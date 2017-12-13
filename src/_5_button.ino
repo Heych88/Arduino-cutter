@@ -1,4 +1,5 @@
 
+
 volatile int pb_debounce = 0;  // push button debounce time
 char* estop_str = "E-STOP";
 
@@ -69,6 +70,9 @@ void updateButton(const char button) {
         break;
       case WHEEL_DIAM:
         wheelDiamMenu(button);
+        break;
+      case PIER_SOL_OFFSET:
+        pierceSolOffsetMenu(button);
         break;
     }
   } else {

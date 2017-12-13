@@ -26,8 +26,9 @@ bool menu_selected = false;  // keeps track if the user has enter a menu previou
 #define CUT_DELAY 8 // number of pierces
 #define STEP_REV 9 // steps per stepper motor revolution menu
 #define WHEEL_DIAM 10 // wheel diameter setting menu
+#define PIER_SOL_OFFSET 11 // offset distance of pierce solenoid
 
-#define MENU_SIZE WHEEL_DIAM  // Number of menus that can be displayed
+#define MENU_SIZE PIER_SOL_OFFSET  // Number of menus that can be displayed
 
 short state = MAIN; // the current system state
 int qty_current = 0; // number of sleeves already produced
@@ -366,6 +367,28 @@ void wheelDiamMenu (const char button) {
 }
 
 
+/*
+ * Adjust the offset between the pierce solenoid and cutting solenoid
+ * 
+ * Args:
+ *    button: button that has been pressed.
+ *    
+ */
+void pierceSolOffsetMenu (const char button) {
+  pierce_sol_offset = updateValue(button, pierce_sol_offset, 0, 300.);
+
+  eepromWrite(SOL_OFFSET_ADDR, pierce_sol_offset);  // update the eeprom with the latest value
+
+  String str = "Pier sol offset";
+  printToScreen(str, 0, 0, true, false);
+  String value_str = String(pierce_sol_offset);
+  printToScreen(value_str, 0, 1, true, false);
+
+  // blink the cursor to indicate the menu has been selected
+  if (menu_selected) lcd.blink();
+}
+
+
 void setMenu() {
   switch(state) {
     case MAIN:
@@ -400,6 +423,9 @@ void setMenu() {
       break;
     case WHEEL_DIAM:
       wheelDiamMenu(NO_PRESS);
+      break;
+    case PIER_SOL_OFFSET:
+      pierceSolOffsetMenu(NO_PRESS);
       break;
   }  
 }

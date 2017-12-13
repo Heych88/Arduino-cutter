@@ -20,6 +20,7 @@
 #define PIERCE_QTY_ADDR 10
 #define WHEEL_DIAM_ADDR 12
 #define STEP_REV_ADDR 14
+#define SOL_OFFSET_ADDR 16
 
 
 int addr = 0;
@@ -34,8 +35,9 @@ const int pierce_length = 7; // length of each piece
 const int qty_pierce = 3; // length of each piece
 
 const int wheel_diam = 61.0;  // diameter of the wheel
-const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution for your motor
-
+const int steps_per_revolution = 200;  // change this to fit the number of steps per revolution for your motor
+const int pierce_sol_offset = 0;  // Offset between the cutting solenoid and the pierce solenoid.
+                            // Pierce solenoid my be placed before the cut solenoid in the direction of travel.
 
 /*
  * Splits int (16bit) values into bytes and stores them into 8bit EEPROM starting at the desired address.
@@ -84,7 +86,8 @@ void setup() {
   eepromWrite(PIERCE_LENGTH_ADDR, pierce_length);
   eepromWrite(PIERCE_QTY_ADDR, qty_pierce);
   eepromWrite(WHEEL_DIAM_ADDR, wheel_diam);
-  eepromWrite(STEP_REV_ADDR, stepsPerRevolution);
+  eepromWrite(STEP_REV_ADDR, steps_per_revolution);
+  eepromWrite(SOL_OFFSET_ADDR, pierce_sol_offset);
 
   // turn the LED on when we're done
   digitalWrite(13, HIGH);

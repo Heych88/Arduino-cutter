@@ -11,7 +11,7 @@
 int getDistanceCount(const int distance){
   
   float wheel_dist_per_step = (wheel_diam * PI) / stepsPerRevolution; // distance travelled per step
-  return int(abs(distance / wheel_dist_per_step) + 0.5);
+  return int((distance / wheel_dist_per_step) + 0.5);
 }
 
 
